@@ -1,4 +1,4 @@
-export default function BlogPage() {
+export default function ContactPage() {
   return (
     <main>
       <h1>CONTACT</h1>

@@ -1,4 +1,4 @@
-export default function BlogPage() {
+export default function ServicePage() {
   return (
     <main>
       <h1>SERVICE</h1>
