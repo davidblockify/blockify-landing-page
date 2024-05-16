@@ -8,7 +8,7 @@ import Tabs from '@mui/material/Tabs'
 import { a11yProps, getTabIndex } from '../shared/helpers'
 
 export default function DesktopMenu({ menuItems }) {
-  const pathname = window.location.pathname
+  const pathname = window.location.pathname || '/'
 
   const [currentTabIndex, setCurrentTabIndex] = useState(getTabIndex(pathname))
 
