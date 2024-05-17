@@ -21,11 +21,21 @@ const menuItems = [
 function TopBar() {
   return (
     <AppBar
-      position="static"
-      sx={{ background: 'white', boxShadow: 0, color: 'black' }}
+      id="navbar"
+      position="fixed"
+      sx={{
+        background: 'white',
+        boxShadow: 0,
+        color: 'white',
+        background: 'black',
+        height: '5.25rem',
+      }}
     >
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
+      <Container maxWidth="xl" className="h-full ">
+        <Toolbar
+          disableGutters
+          className=" flex flex-wrap items-center justify-between h-full "
+        >
           <LogoBlockify displaySettings={{ xs: 'none', md: 'flex' }} />
 
           <LogoBlockify displaySettings={{ xs: 'flex', md: 'none' }} />
