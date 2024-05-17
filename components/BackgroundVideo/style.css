@@ -1,0 +1,16 @@
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.background-video video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: hue-rotate(-60deg) blur(0.75px) saturate(110%) brightness(60%)
+    contrast(100%) sepia(0%);
+}

@@ -14,8 +14,8 @@ export default function Frame1() {
   const container = useRef()
 
   return (
-    <>
-      <div className="relative flex flex-col items-center w-full h-screen">
+    <Box className="relative flex flex-col items-center w-full h-screen">
+      <Box>
         <Image
           ref={container}
           id="logo"
@@ -24,29 +24,28 @@ export default function Frame1() {
           height={700}
           alt="logo"
         />
-        <Box className="absolute top-[60%] w-full  flex flex-col items-center">
-          <Typography
-            sx={{
-              fontFamily: inter.variable,
-              color: 'white',
-              textAlign: 'center',
-            }}
-          >
-            <Typography variant="h3">
-              Welcome to{' '}
-              <span style={{ fontWeight: 'bold', color: GREEN_TEXT_COLOR }}>
-                Blockify
-              </span>
-            </Typography>
-            <Typography variant="h3">
-              Reorganizing the World{' '}
-              <span style={{ fontWeight: 'bold', color: GREEN_TEXT_COLOR }}>
-                Through BlockChain
-              </span>
-            </Typography>
-          </Typography>
-        </Box>
-      </div>
-    </>
+      </Box>
+
+      <Box className="absolute top-[60%] w-full  flex flex-col items-center">
+        <Typography
+          variant="h3"
+          sx={{
+            fontFamily: `var(--${inter.variable})`,
+            color: 'white',
+            textAlign: 'center',
+          }}
+        >
+          Welcome to{' '}
+          <span style={{ fontWeight: 'bold', color: GREEN_TEXT_COLOR }}>
+            Blockify
+          </span>
+          <br />
+          Reorganizing the World{' '}
+          <span style={{ fontWeight: 'bold', color: GREEN_TEXT_COLOR }}>
+            Through Blockchain
+          </span>
+        </Typography>
+      </Box>
+    </Box>
   )
 }
