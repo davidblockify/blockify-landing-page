@@ -1,10 +1,9 @@
-import { Inter } from 'next/font/google'
 import './globals.css'
-import gsap from "gsap";
+import { inter } from '@/app/ui/fonts'
 
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
 
-
-const inter = Inter({ subsets: ['latin'] })
+import TopBar from '@/components/TopBar'
 
 export const metadata = {
   title: 'Create Next App',
@@ -13,10 +12,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="h-full">
-      <body className={inter.className}>
-
-        <main className="h-[350vh]">{children}</main>
+    <html lang="en">
+      <body className={`${inter.className}`}>
+        <AppRouterCacheProvider>
+          <TopBar />
+          <main className="h-[350vh]">{children}</main>
+        </AppRouterCacheProvider>
       </body>
     </html>
   )

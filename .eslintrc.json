@@ -1,3 +1,50 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:import/errors",
+    "prettier",
+    "next"
+  ],
+  "plugins": ["prettier"],
+  "parser": "@babel/eslint-parser",
+  "ignorePatterns": [".next/*", "**/*config.js", "**/*config.mjs"],
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "extensions": [".js", ".jsx"],
+        "map": [["@", "."]]
+      }
+    }
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      { "semi": false, "singleQuote": true, "endOfLine": "auto" }
+    ],
+    "no-useless-call": "error",
+    "eqeqeq": "error",
+    "no-restricted-syntax": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "ignoreUrls": true,
+        "ignoreComments": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "import/newline-after-import": "error",
+    "import/no-duplicates": ["error", { "considerQueryString": true }],
+    "no-console": "error",
+    "no-undef": "error",
+    "no-unused-vars": "error",
+    "quotes": ["error", "single"],
+    "no-alert": "error",
+    "import/no-unresolved": 2
+  }
 }

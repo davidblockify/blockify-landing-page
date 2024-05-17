@@ -7,6 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        'fadeInScaleUp': 'fadeInScaleUp 1s ease-out'
+      },
+      keyframes: {
+        fadeInScaleUp: {
+          'from': { opacity: '0', transform: 'scale(0.3)' },
+          'to': { opacity: '1', transform: 'scale(1.0)' },
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
