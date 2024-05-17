@@ -2,20 +2,19 @@
 import { GREEN_TEXT_COLOR } from '@/app/shared/constant'
 import Typography from '@mui/material/Typography'
 import Image from 'next/image'
-import Box from '@mui/material/Box'
 
 export default function Frame2() {
   return (
-    <div className="flex flex-col items-center gap-10 w-full lg:h-[150vh] h-[210vh]   p-10">
-      <div className="xl:w-[90%] 2xl:w-[75%]  lg:w-[100%] lg:h-[50vh] h-[70vh] flex lg:flex-row flex-col items-center   bg-slate-500">
-        <div className=" bg-black">
-          <div className="flex flex-col gap-8 justify-end h-full lg:w-[70%] lg:text-start text-center lg:text-[20px] text-lg  bg-slate-500 ">
+    <div className="flex flex-col items-center gap-10 w-full lg:h-[150vh] h-[210vh] p-10">
+      <div className="xl:w-[90%] 2xl:w-[75%]  lg:w-[100%] lg:h-[50vh] h-[70vh] flex lg:flex-row flex-col items-center gap-3">
+        <div className="w-full lg:h-[90%] 2xl:h-full lg:w-1/2">
+          <div className="flex flex-col gap-8 justify-end h-full lg:w-[60%] w-full lg:text-start text-center sm:text-[1rem] text-[0.5rem]">
             <Typography
-              className="lg:!font-extrabold !font-bold "
               variant="h2"
+              className="!text-[2rem] lg:!text-[3.5rem]"
               sx={{
                 fontFamily: 'var(--font-inter)',
-                // fontWeight: 800,
+                fontWeight: 800,
                 color: `${GREEN_TEXT_COLOR}`,
               }}
             >
@@ -26,7 +25,7 @@ export default function Frame2() {
               sx={{
                 color: 'white',
                 fontFamily: 'var(--font-inter)',
-                // fontSize: '20px',
+                fontSize: '20px',
                 lineHeight: '30px',
                 letterSpacing: '-1.1%',
               }}
@@ -49,7 +48,7 @@ export default function Frame2() {
       </div>
       {/* -------------------------------------------------------------------------------------------------------------- */}
       <div className=" xl:w-[90%] 2xl:w-[75%]  lg:w-[100%] lg:h-[50vh] h-[70vh] flex lg:flex-row flex-col-reverse items-center gap-3">
-        <div className=" relative lg:w-1/2  md:w-3/4 h-full  ">
+        <div className="xl:w-[60%] lg:w-[60%] 2xl:h-full lg:h-[90%] md:w-3/4 h-full min-h-[10rem]  lg:rounded-3xl rounded-md ">
           <video
             autoPlay
             loop
@@ -61,12 +60,12 @@ export default function Frame2() {
               type="video/mp4"
             />
           </video>
-          <div className="absolute rounded-3xl top-0 w-full h-full bg-gradient-to-t from-[#7fd65794] to-green-[#071d10] bg-black bg-opacity-65 "></div>
         </div>
 
-        <div className="flex flex-col gap-8 justify-end h-full lg:w-1/2 w-full lg:text-start text-center lg:text-[20px] bg-slate-500">
+        <div className="flex flex-col gap-8 lg:justify-end 2xl:h-full lg:w-1/2 w-full lg:text-start text-center lg:text-[20px] lg:h-[90%] ">
           <Typography
             variant="h2"
+            className="!text-[2rem] lg:!text-[3.5rem]"
             sx={{
               fontFamily: 'var(--font-inter)',
               fontWeight: 800,
@@ -80,7 +79,7 @@ export default function Frame2() {
             sx={{
               color: 'white',
               fontFamily: 'var(--font-inter)',
-              // fontSize: '20px',
+              fontSize: '20px',
               lineHeight: '30px',
               letterSpacing: '-1.1%',
             }}
@@ -96,12 +95,12 @@ export default function Frame2() {
           </Typography>
         </div>
       </div>
-      {/* <div className="xl:w-[90%] 2xl:w-[70%] lg:w-[100%] h-[50vh] flex lg:flex-row flex-col items-center  bg-slate-500">
-        <div className=" bg-black">
-          <div className="flex flex-col gap-8 justify-end h-full lg:w-[70%] lg:text-start text-center lg:text-[20px] text-lg  bg-slate-500 ">
+      <div className="xl:w-[90%] 2xl:w-[75%]  lg:w-[100%] lg:h-[50vh] h-[70vh] flex lg:flex-row flex-col items-center gap-3">
+        <div className="w-full lg:h-[90%] 2xl:h-full lg:w-1/2">
+          <div className="flex flex-col gap-8 justify-end h-full lg:w-[60%] w-full lg:text-start text-center sm:text-[1rem] text-[0.5rem]">
             <Typography
-              className="lg:!font-extrabold !font-bold "
               variant="h2"
+              className="!text-[2rem] lg:!text-[3.5rem]"
               sx={{
                 fontFamily: 'var(--font-inter)',
                 fontWeight: 800,
@@ -130,48 +129,8 @@ export default function Frame2() {
           </div>
         </div>
         <Image
-          className="xl:w-[55%] lg:w-[60%] md:w-3/4 h-full lg:rounded-3xl rounded-md"
-          src="/value-img.png"
-          width={1406}
-          height={792}
-          alt="introduction image"
-        />
-      </div> */}
-      <div className="xl:w-[90%] 2xl:w-[75%]  lg:w-[100%] lg:h-[50vh] h-[70vh] flex lg:flex-row flex-col items-center   bg-slate-500">
-        <div className=" bg-black">
-          <div className="flex flex-col gap-8 justify-end h-full lg:w-[70%] lg:text-start text-center lg:text-[20px] text-lg  bg-slate-500 ">
-            <Typography
-              className="lg:!font-extrabold !font-bold "
-              variant="h2"
-              sx={{
-                fontFamily: 'var(--font-inter)',
-                // fontWeight: 800,
-                color: `${GREEN_TEXT_COLOR}`,
-              }}
-            >
-              Introduction
-            </Typography>
-            <Typography
-              variant="p"
-              sx={{
-                color: 'white',
-                fontFamily: 'var(--font-inter)',
-                // fontSize: '20px',
-                lineHeight: '30px',
-                letterSpacing: '-1.1%',
-              }}
-            >
-              <p>
-                <span className="font-bold">Blockify</span> is pioneering the
-                future of digital innovation with cutting-edge blockchain
-                solutions tailored for the Web 3.0 era.
-              </p>
-            </Typography>
-          </div>
-        </div>
-        <Image
           className="xl:w-[60%] lg:w-[60%] 2xl:h-full lg:h-[90%] md:w-3/4 h-full min-h-[10rem]  lg:rounded-3xl rounded-md"
-          src="/introduction-img.png"
+          src="/value-img.png"
           width={1406}
           height={792}
           alt="introduction image"
