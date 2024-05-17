@@ -1,35 +1,34 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 import Box from '@mui/material/Box'
-import Tab from '@mui/material/Tab'
-import Tabs from '@mui/material/Tabs'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 
-import { a11yProps, getTabIndex } from '../shared/helpers'
 import { GREEN_TEXT_COLOR } from '@/app/shared/constant'
+import { nunitoSans } from '@/app/ui/fonts'
+import { getTabIndex } from '../shared/helpers'
 
-const StyledTab = styled(Tab)({
-  color: 'white',
-  '&.Mui-selected': {
-    color: `${GREEN_TEXT_COLOR}`,
-  },
-  fontFamily: 'var(--font-nunito)',
-  fontWeight: 700,
+const StyledTypograpghy = styled(Typography)(({ isSelected }) => ({
+  color: isSelected ? GREEN_TEXT_COLOR : 'white',
+  fontFamily: `var(--${nunitoSans.variable})`,
+  fontWeight: 'h5',
   textTransform: 'none',
-  fontSize: '20px',
-  lineHeight: '28px',
-})
+  fontSize: 'h6',
+  lineHeight: '1.4em',
+}))
 
 export default function DesktopMenu({ menuItems }) {
   const pathname = usePathname() || '/'
-
-  const [currentTabIndex, setCurrentTabIndex] = useState(getTabIndex(pathname))
-
-  const handleChangeTab = (_event, newTabIndex) => {
-    setCurrentTabIndex(newTabIndex)
-  }
+  const [currentTabPathname, setCurrentTabTabPathname] = useState(
+    getTabIndex(pathname),
+  )
+  useEffect(() => {
+    setCurrentTabTabPathname(pathname)
+  }, [pathname])
 
   return (
     <Box
@@ -40,20 +39,21 @@ export default function DesktopMenu({ menuItems }) {
         justifyContent: 'end',
       }}
     >
-      <Tabs value={currentTabIndex} onChange={handleChangeTab}>
+      <Box>
         {menuItems.map((menuItem) => {
+          const isSelected = menuItem.href === currentTabPathname
+
           return (
-            <StyledTab
-              key={menuItem.index}
-              LinkComponent={Link}
-              href={menuItem.href}
-              label={menuItem.label}
-              value={menuItem.index}
-              {...a11yProps(menuItem.index)}
-            />
+            <Button key={menuItem.index}>
+              <Link href={menuItem.href}>
+                <StyledTypograpghy isSelected={isSelected}>
+                  {menuItem.label}
+                </StyledTypograpghy>
+              </Link>
+            </Button>
           )
         })}
-      </Tabs>
+      </Box>
     </Box>
   )
 }

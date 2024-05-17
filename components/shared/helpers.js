@@ -4,6 +4,7 @@ export function a11yProps(index) {
     'aria-controls': `tabpanel-${index}`,
   }
 }
+
 export const getTabIndex = (path) => {
   switch (path) {
     case '/':
