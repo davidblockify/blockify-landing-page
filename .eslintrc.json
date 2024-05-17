@@ -11,7 +11,7 @@
   ],
   "plugins": ["prettier"],
   "parser": "@babel/eslint-parser",
-  "ignorePatterns": [".next/*", "**/*config.js", "**/*config.mjs"],
+  "ignorePatterns": [".next/*", "**/*config.js", "**/*config.mjs", "*"],
   "settings": {
     "import/resolver": {
       "alias": {
