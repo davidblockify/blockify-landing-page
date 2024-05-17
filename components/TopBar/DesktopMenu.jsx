@@ -24,7 +24,7 @@ const StyledTypograpghy = styled(Typography)(({ isSelected }) => ({
 export default function DesktopMenu({ menuItems }) {
   const pathname = usePathname() || '/'
   const [currentTabPathname, setCurrentTabTabPathname] = useState(
-    getTabIndex(pathname)
+    getTabIndex(pathname),
   )
   useEffect(() => {
     setCurrentTabTabPathname(pathname)
