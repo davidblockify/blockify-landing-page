@@ -23,6 +23,9 @@ module.exports = {
         // "landing-page": "url('../app/asset/landing-page-bg.jpg')"
         "landing-page": "url('/background-banner.mp4')"
       },
+      colors: {
+        "app-green": "#1ED760"
+      }
     },
   },
   plugins: [],
