@@ -1,8 +1,25 @@
 {
-  "extends": ["next/core-web-vitals", "prettier"],
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:import/errors",
+    "prettier",
+    "next"
+  ],
   "plugins": ["prettier"],
   "parser": "@babel/eslint-parser",
-  "ignorePatterns": [".next/*", "**/*config.js",  "**/*config.mjs"],
+  "ignorePatterns": [".next/*", "**/*config.js", "**/*config.mjs"],
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "extensions": [".js", ".jsx"],
+        "map": [["@", "."]]
+      }
+    }
+  },
   "rules": {
     "prettier/prettier": [
       "error",
