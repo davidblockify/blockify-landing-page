@@ -1,9 +1,10 @@
-import './globals.css'
 import { inter } from '@/app/ui/fonts'
 
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
 
 import TopBar from '@/components/TopBar'
+import BackgroundVideo from '@/components/BackgroundVideo'
+import './globals.css'
 
 export const metadata = {
   title: 'Create Next App',
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
         <AppRouterCacheProvider>
           <TopBar />
           <main className="h-[350vh]">{children}</main>
+          <BackgroundVideo />
         </AppRouterCacheProvider>
       </body>
     </html>
