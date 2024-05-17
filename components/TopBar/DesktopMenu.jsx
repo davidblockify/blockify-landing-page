@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 import Box from '@mui/material/Box'
 import Tab from '@mui/material/Tab'
@@ -8,7 +9,7 @@ import Tabs from '@mui/material/Tabs'
 import { a11yProps, getTabIndex } from '../shared/helpers'
 
 export default function DesktopMenu({ menuItems }) {
-  const pathname = window.location.pathname || '/'
+  const pathname = usePathname() || '/'
 
   const [currentTabIndex, setCurrentTabIndex] = useState(getTabIndex(pathname))
 
