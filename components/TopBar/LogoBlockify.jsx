@@ -8,21 +8,24 @@ import Box from '@mui/material/Box'
 import Logo from '@/public/Logo.png'
 
 export default function LogoBlockify({ displaySettings }) {
+  const blockifyVariant = displaySettings.md !== 'flex' ? 'h5' : 'h4'
+  const blockifyFlexGrow = displaySettings.md === 'none' ? 1 : undefined
+  const logoSize = displaySettings.md !== 'flex' ? 45 : 60
+
   return (
     <>
       <Box sx={{ display: displaySettings, mr: '0.5em' }}>
-        <Image width={60} height={60} src={Logo} alt="Brand Logo" />
+        <Image width={logoSize} height={logoSize} src={Logo} alt="Brand Logo" />
       </Box>
 
       <Typography
-        variant={displaySettings.md !== 'flex' ? 'h5' : 'h4'}
+        variant={blockifyVariant}
         noWrap
         component="a"
         href="/"
         sx={{
-          mr: 2,
           display: displaySettings,
-          flexGrow: displaySettings.md === 'none' ? 1 : undefined,
+          flexGrow: { blockifyFlexGrow },
           fontFamily: 'monospace',
           fontWeight: { xs: 400, sm: 500, md: 700 },
           color: 'inherit',

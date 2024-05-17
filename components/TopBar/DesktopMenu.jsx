@@ -17,7 +17,7 @@ const StyledTypograpghy = styled(Typography)(({ isSelected }) => ({
   fontFamily: `var(--${nunitoSans.variable})`,
   fontWeight: 'h5',
   textTransform: 'none',
-  fontSize: 'h6',
+  fontSize: '1.4em',
   lineHeight: '1.4em',
 }))
 
@@ -35,11 +35,10 @@ export default function DesktopMenu({ menuItems }) {
       sx={{
         flexGrow: 1,
         display: { xs: 'none', md: 'flex' },
-        borderColor: 'divider',
         justifyContent: 'end',
       }}
     >
-      <Box>
+      <Box sx={{ marginTop: '1.5rem' }}>
         {menuItems.map((menuItem) => {
           const isSelected = menuItem.href === currentTabPathname
 

@@ -27,7 +27,7 @@ function TopBar() {
         color: 'white',
         background:
           'linear-gradient(182.32deg, rgba(50, 176, 104, 0) -50%, rgba(50, 176, 104, 0.15) 98.66%), rgba(0, 0, 0, 1);',
-        height: '5.25rem',
+        height: '4rem',
       }}
     >
       <Container maxWidth="xl" className="h-full ">
