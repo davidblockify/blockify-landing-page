@@ -23,7 +23,12 @@
   "rules": {
     "prettier/prettier": [
       "error",
-      { "semi": false, "singleQuote": true, "endOfLine": "auto" }
+      {
+        "semi": false,
+        "singleQuote": true,
+        "endOfLine": "auto",
+        "trailingComma": "none"
+      }
     ],
     "no-useless-call": "error",
     "eqeqeq": "error",

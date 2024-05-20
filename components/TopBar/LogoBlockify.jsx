@@ -29,7 +29,7 @@ export default function LogoBlockify({ displaySettings }) {
           fontFamily: 'monospace',
           fontWeight: { xs: 400, sm: 500, md: 700 },
           color: 'inherit',
-          textDecoration: 'none',
+          textDecoration: 'none'
         }}
       >
         Blockify
