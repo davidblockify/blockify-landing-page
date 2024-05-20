@@ -40,6 +40,38 @@
     ],
     "import/newline-after-import": "error",
     "import/no-duplicates": ["error", { "considerQueryString": true }],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "external",
+          "builtin",
+          "index",
+          "sibling",
+          "parent",
+          "internal"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "next",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@mui/**",
+            "group": "external",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react", "next"],
+        "newlines-between": "always"
+      }
+    ],
     "no-console": "error",
     "no-undef": "error",
     "no-unused-vars": "error",

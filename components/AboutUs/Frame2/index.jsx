@@ -1,14 +1,12 @@
 /* eslint-disable quotes */
 'use client'
-
 import Image from 'next/image'
-
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
 import { useBannerAnimations } from '@/app/hooks/useBannerAnimation'
-import BannerCard from '../BannerCard'
-import ContentText from '../BannerCard/ContentText'
+import BannerCard from '@/components/BannerCard'
+import ContentText from '@/components/BannerCard/ContentText'
 
 gsap.registerPlugin(ScrollTrigger)
 

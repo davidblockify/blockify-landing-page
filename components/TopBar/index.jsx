@@ -4,7 +4,6 @@ import React from 'react'
 
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
-
 import Container from '@mui/material/Container'
 
 import DesktopMenu from './DesktopMenu'
@@ -27,13 +26,19 @@ function TopBar() {
         color: 'white',
         background:
           'linear-gradient(182.32deg, rgba(50, 176, 104, 0) -50%, rgba(50, 176, 104, 0.15) 98.66%), rgba(0, 0, 0, 1);',
-        height: '5.25rem',
+        height: { xs: '4rem', md: '5.5rem' },
       }}
     >
       <Container maxWidth="xl" className="h-full ">
         <Toolbar
           disableGutters
-          className=" flex flex-wrap items-center justify-between h-full "
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            height: '100%',
+          }}
         >
           <LogoBlockify displaySettings={{ xs: 'none', md: 'flex' }} />
 
