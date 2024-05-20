@@ -27,13 +27,19 @@ function TopBar() {
         color: 'white',
         background:
           'linear-gradient(182.32deg, rgba(50, 176, 104, 0) -50%, rgba(50, 176, 104, 0.15) 98.66%), rgba(0, 0, 0, 1);',
-        height: '4rem',
+        height: { xs: '4rem', md: '5.5rem' },
       }}
     >
       <Container maxWidth="xl" className="h-full ">
         <Toolbar
           disableGutters
-          className=" flex flex-wrap items-center justify-between h-full "
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            height: '100%',
+          }}
         >
           <LogoBlockify displaySettings={{ xs: 'none', md: 'flex' }} />
 

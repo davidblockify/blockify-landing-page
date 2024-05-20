@@ -8,7 +8,7 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 
-import { GREEN_TEXT_COLOR } from '@/app/shared/constant'
+import { GREEN_TEXT_COLOR } from '@/app/shared/constants'
 import { nunitoSans } from '@/app/ui/fonts'
 import { getTabIndex } from '../shared/helpers'
 
@@ -23,11 +23,11 @@ const StyledTypograpghy = styled(Typography)(({ isSelected }) => ({
 
 export default function DesktopMenu({ menuItems }) {
   const pathname = usePathname() || '/'
-  const [currentTabPathname, setCurrentTabTabPathname] = useState(
+  const [currentTabPathname, setCurrentTabPathname] = useState(
     getTabIndex(pathname),
   )
   useEffect(() => {
-    setCurrentTabTabPathname(pathname)
+    setCurrentTabPathname(pathname)
   }, [pathname])
 
   return (

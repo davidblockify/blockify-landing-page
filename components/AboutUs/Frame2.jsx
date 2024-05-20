@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { GREEN_TEXT_COLOR } from '@/app/shared/constant'
+import { GREEN_TEXT_COLOR } from '@/app/shared/constants'
 import Typography from '@mui/material/Typography'
 import Image from 'next/image'
 
