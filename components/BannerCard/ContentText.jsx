@@ -1,6 +1,6 @@
 import Typography from '@mui/material/Typography'
 
-import { inter } from '@/app/ui/fonts'
+import { inter } from '@/ui/fonts'
 
 export default function ContentText({
   id,

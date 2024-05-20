@@ -4,7 +4,7 @@ import Image from 'next/image'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
-import { useBannerAnimations } from '@/app/hooks/useBannerAnimation'
+import { useBannerAnimations } from '@/hooks/useBannerAnimation'
 import BannerCard from '@/components/BannerCard'
 import ContentText from '@/components/BannerCard/ContentText'
 

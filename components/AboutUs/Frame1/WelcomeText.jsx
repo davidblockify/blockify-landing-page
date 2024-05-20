@@ -3,8 +3,8 @@ import React from 'react'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 
-import { GREEN_TEXT_COLOR } from '@/app/shared/constants'
-import { inter } from '@/app/ui/fonts'
+import { GREEN_TEXT_COLOR } from '@/shared/constants'
+import { inter } from '@/ui/fonts'
 
 export default function WelcomeText({
   displaySettings = { xs: 'none', md: 'flex' },
