@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className}`}>
         <AppRouterCacheProvider>
           <TopBar />
-          <main className="h-[350vh]">{children}</main>
+          <main>{children}</main>
           <BackgroundVideo />
         </AppRouterCacheProvider>
       </body>
