@@ -17,7 +17,7 @@ export default function ContentText({
       >
         <Typography
           variant="h2"
-          className="!text-[2rem] lg:!text-[3.5rem]"
+          className="!text-[2rem] lg:!text-[3rem]"
           sx={{
             fontFamily: `var(--${inter.variable})`,
             fontWeight: 800,
