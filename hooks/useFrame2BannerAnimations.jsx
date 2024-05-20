@@ -6,7 +6,7 @@ import { useGSAP } from '@gsap/react'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export const useBannerAnimations = () => {
+export const useFrame2BannerAnimations = () => {
   const animateBanner = (ref, triggerId, directionX) => {
     gsap.from(ref.current, {
       scrollTrigger: {
