@@ -4,14 +4,14 @@ import Image from 'next/image'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
-import { useFrame2BannerAnimations } from '@/hooks/useFrame2BannerAnimations'
+import { useAboutUsFrame2Animations } from '@/hooks/useAboutUsFrame2Animations'
 import BannerCard from '@/components/BannerCard'
 import ContentText from '@/components/BannerCard/ContentText'
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Frame2() {
-  const { banner1, banner2, banner3 } = useFrame2BannerAnimations()
+  const { banner1, banner2, banner3 } = useAboutUsFrame2Animations()
 
   return (
     <div className="flex flex-col items-center gap-10 w-full p-10 overflow-x-hidden">
