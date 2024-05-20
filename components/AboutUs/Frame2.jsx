@@ -1,7 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
-import { GREEN_TEXT_COLOR } from '@/app/shared/constant'
-import Typography from '@mui/material/Typography'
+import React from 'react'
+
 import Image from 'next/image'
+
+import Typography from '@mui/material/Typography'
+
+import { GREEN_TEXT_COLOR } from '@/app/shared/constants'
 
 export default function Frame2() {
   return (
