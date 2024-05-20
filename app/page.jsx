@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Box from '@mui/material/Box'
 
 import Frame1 from '@/components/AboutUs/Frame1'

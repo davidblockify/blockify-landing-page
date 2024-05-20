@@ -8,9 +8,10 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 
+import { getTabIndex } from '../shared/helpers'
+
 import { GREEN_TEXT_COLOR } from '@/app/shared/constants'
 import { nunitoSans } from '@/app/ui/fonts'
-import { getTabIndex } from '../shared/helpers'
 
 const StyledTypograpghy = styled(Typography)(({ isSelected }) => ({
   color: isSelected ? GREEN_TEXT_COLOR : 'white',
