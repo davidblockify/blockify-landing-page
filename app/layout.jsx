@@ -2,7 +2,7 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
 
 import TopBar from '@/components/TopBar'
 import BackgroundVideo from '@/components/BackgroundVideo'
-import { inter } from '@/app/ui/fonts'
+import { inter } from '@/ui/fonts'
 import './globals.css'
 
 export const metadata = {

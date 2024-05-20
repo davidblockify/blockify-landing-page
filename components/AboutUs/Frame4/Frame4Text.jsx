@@ -3,11 +3,8 @@ import React from 'react'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 
-import { GREEN_TEXT_COLOR } from '@/app/shared/constants'
-import {
-  getHeaderVarient,
-  getContentVarient
-} from '@/components/shared/helpers'
+import { GREEN_TEXT_COLOR } from '@/shared/constants'
+import { getHeaderVarient, getContentVarient } from '@/components/utils/helpers'
 
 export default function Frame4Text({
   displaySettings = { xs: 'none', md: 'flex' }
