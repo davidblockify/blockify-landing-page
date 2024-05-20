@@ -13,13 +13,13 @@ export default function Frame1() {
 
   return (
     <Box
+      position="static"
       sx={{
-        // position: 'absolute',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         width: '100%',
-        height: '100vh',
+        height: '100vh'
       }}
     >
       <Box>
@@ -27,6 +27,7 @@ export default function Frame1() {
           ref={container}
           id="logo"
           src="/logo-blured.png"
+          layout="responsive"
           width={700}
           height={700}
           alt="logo"
