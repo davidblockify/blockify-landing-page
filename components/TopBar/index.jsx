@@ -14,7 +14,7 @@ const menuItems = [
   { index: 0, label: 'About Us', href: '/' },
   { index: 1, label: 'Service', href: '/service' },
   { index: 2, label: 'Blog', href: '/blog' },
-  { index: 3, label: 'Contact', href: '/contact' },
+  { index: 3, label: 'Contact', href: '/contact' }
 ]
 
 function TopBar() {
@@ -26,7 +26,7 @@ function TopBar() {
         color: 'white',
         background:
           'linear-gradient(182.32deg, rgba(50, 176, 104, 0) -50%, rgba(50, 176, 104, 0.15) 98.66%), rgba(0, 0, 0, 1);',
-        height: { xs: '4rem', md: '5.5rem' },
+        height: { xs: '4rem', md: '5.5rem' }
       }}
     >
       <Container maxWidth="xl" className="h-full ">
@@ -37,7 +37,7 @@ function TopBar() {
             flexWrap: 'wrap',
             alignItems: 'center',
             justifyContent: 'space-between',
-            height: '100%',
+            height: '100%'
           }}
         >
           <LogoBlockify displaySettings={{ xs: 'none', md: 'flex' }} />

@@ -8,7 +8,7 @@ export default function ContentText({
   greenHeading,
   heading,
   boldContent,
-  content,
+  content
 }) {
   return (
     <div id={id} className="w-full lg:h-[90%] 2xl:h-full lg:w-1/2">
@@ -21,7 +21,7 @@ export default function ContentText({
           sx={{
             fontFamily: `var(--${inter.variable})`,
             fontWeight: 800,
-            color: 'white',
+            color: 'white'
           }}
         >
           <span className="text-app-green">{greenHeading}</span> {heading}
@@ -33,7 +33,7 @@ export default function ContentText({
             fontFamily: `var(--${inter.variable})`,
             fontSize: '20px',
             lineHeight: '30px',
-            letterSpacing: '-1.1%',
+            letterSpacing: '-1.1%'
           }}
         >
           <p>

@@ -27,9 +27,8 @@ export default function Frame1() {
           ref={container}
           id="logo"
           src="/logo-blured.png"
-          layout="responsive"
-          width={700}
-          height={700}
+          width={555}
+          height={555}
           alt="logo"
         />
       </Box>
