@@ -19,19 +19,22 @@ jobs:
           node-version: 18.20.2
         
       - run: yarn install
-        working-directory: ./app
       
       - run: yarn build
-        working-directory: ./app
       
       - run: pwd
       
       - run: ls -la
 
+      - name: install-aws-cli
+        uses: unfor19/install-aws-cli-action@v1
+        with:
+          version: 2                         # default
+          verbose: false                     # default
+          arch: amd64                        # allowed values: amd64, arm64
+
       - name: Sync to S3
-        uses: chrislennon/action-aws-cli@v1.1
-      - run: aws s3 sync ./out s3://blockify-landing-page
-        working-directory: ./app
+        run: aws s3 sync ./out s3://blockify-landing-page
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
