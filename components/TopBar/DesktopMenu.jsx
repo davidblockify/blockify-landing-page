@@ -20,12 +20,15 @@ const StyledTypograpghy = styled(Typography)(({ isSelected }) => ({
   textTransform: 'none',
   fontSize: '1.4em',
   lineHeight: '1.4em',
+  '&:hover': {
+    color: GREEN_TEXT_COLOR
+  }
 }))
 
 export default function DesktopMenu({ menuItems }) {
   const pathname = usePathname() || '/'
   const [currentTabPathname, setCurrentTabPathname] = useState(
-    getTabIndex(pathname),
+    getTabIndex(pathname)
   )
   useEffect(() => {
     setCurrentTabPathname(pathname)
@@ -36,7 +39,7 @@ export default function DesktopMenu({ menuItems }) {
       sx={{
         flexGrow: 1,
         display: { xs: 'none', md: 'flex' },
-        justifyContent: 'end',
+        justifyContent: 'end'
       }}
     >
       <Box sx={{ marginTop: '1.5rem' }}>

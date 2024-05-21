@@ -34,9 +34,7 @@ jobs:
           arch: amd64                        # allowed values: amd64, arm64
 
       - name: Sync to S3
-        uses: chrislennon/action-aws-cli@v1.1
         run: aws s3 sync ./out s3://blockify-landing-page
-
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

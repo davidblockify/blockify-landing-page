@@ -1,7 +1,7 @@
 export function a11yProps(index) {
   return {
     id: `tab-${index}`,
-    'aria-controls': `tabpanel-${index}`,
+    'aria-controls': `tabpanel-${index}`
   }
 }
 
@@ -18,4 +18,20 @@ export const getTabIndex = (path) => {
     default:
       return 0
   }
+}
+
+export const getHeaderVarient = (
+  displaySettings,
+  desktopVariant = 'h2',
+  mobileVarient = 'h5'
+) => {
+  return displaySettings.md === 'flex' ? desktopVariant : mobileVarient
+}
+
+export const getContentVarient = (
+  displaySettings,
+  desktopVariant = 'h5',
+  mobileVarient = 'body1'
+) => {
+  return displaySettings.md === 'flex' ? desktopVariant : mobileVarient
 }

@@ -13,9 +13,9 @@ export const useAboutUsFrame2Animations = () => {
         trigger: triggerId,
         start: 'top bottom',
         end: '100% 70%',
-        scrub: 0.5,
+        scrub: 0.5
       },
-      x: directionX,
+      x: directionX
     })
   }
 

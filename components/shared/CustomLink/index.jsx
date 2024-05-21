@@ -10,7 +10,7 @@ function CustomLink({
   color = 'white',
   textDecoration = 'none',
   padding = '0px',
-  children,
+  children
 }) {
   return (
     <Link
@@ -21,7 +21,7 @@ function CustomLink({
         sx={{
           color: color,
           transition: 'background-color 0.3s',
-          borderRadius: '4px',
+          borderRadius: '4px'
         }}
       >
         {children}
@@ -34,7 +34,7 @@ CustomLink.propTypes = {
   to: PropTypes.string,
   linkColor: PropTypes.string,
   textDecoration: PropTypes.string,
-  padding: PropTypes.string || PropTypes.number,
+  padding: PropTypes.string || PropTypes.number
 }
 
 export default CustomLink
