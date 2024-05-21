@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 
 import Box from '@mui/material/Box'
@@ -15,21 +16,17 @@ export default function Frame3() {
       m="10%"
       width="80vw"
       display="flex"
-      flexDirection="column"
+      flexDirection={{ xs: 'column', md: 'column', lg: 'row' }}
     >
-      <Frame3Text displaySettings={{ xs: 'flex', md: 'none' }} />
+      <Frame3Text displaySettings={{ xs: 'none', md: 'flex', lg: 'none' }} />
+      <Frame3Text displaySettings={{ xs: 'flex', md: 'none', lg: 'none' }} />
 
       <Box
-        position="relative"
-        flex="1"
-        zIndex={0}
         borderRadius={4}
         sx={{
-          width: '100%',
+          width: { md: '100%', lg: '66%' },
           height: '100%',
-          overflow: 'hidden',
-          top: 0,
-          left: 0
+          overflow: 'hidden'
         }}
       >
         <CardMedia
@@ -40,8 +37,9 @@ export default function Frame3() {
           style={{ width: '100%', height: '100%', objectFit: 'contain' }}
           src={backgroundUrl}
         />
-        <Frame3Text displaySettings={{ xs: 'none', md: 'flex' }} />
       </Box>
+
+      <Frame3Text displaySettings={{ xs: 'none', md: 'none', lg: 'flex' }} />
     </Box>
   )
 }

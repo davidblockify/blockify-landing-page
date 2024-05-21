@@ -22,7 +22,7 @@ export default function Frame1() {
         height: '100vh'
       }}
     >
-      <Box>
+      <Box mb={4}>
         <Image
           ref={container}
           id="logo"
@@ -33,8 +33,7 @@ export default function Frame1() {
         />
       </Box>
 
-      <WelcomeText displaySettings={{ xs: 'none', md: 'flex' }} />
-      <WelcomeText displaySettings={{ xs: 'flex', md: 'none' }} />
+      <WelcomeText />
     </Box>
   )
 }

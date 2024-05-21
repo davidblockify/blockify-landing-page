@@ -1,10 +1,3 @@
-export function a11yProps(index) {
-  return {
-    id: `tab-${index}`,
-    'aria-controls': `tabpanel-${index}`
-  }
-}
-
 export const getTabIndex = (path) => {
   switch (path) {
     case '/':
@@ -25,13 +18,13 @@ export const getHeaderVarient = (
   desktopVariant = 'h2',
   mobileVarient = 'h5'
 ) => {
-  return displaySettings.md === 'flex' ? desktopVariant : mobileVarient
+  return displaySettings.lg === 'flex' ? desktopVariant : mobileVarient
 }
 
 export const getContentVarient = (
   displaySettings,
-  desktopVariant = 'h5',
+  desktopVariant = 'h6',
   mobileVarient = 'body1'
 ) => {
-  return displaySettings.md === 'flex' ? desktopVariant : mobileVarient
+  return displaySettings.lg === 'flex' ? desktopVariant : mobileVarient
 }

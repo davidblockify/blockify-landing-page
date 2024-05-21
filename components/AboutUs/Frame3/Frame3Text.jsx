@@ -8,50 +8,46 @@ import { getHeaderVarient, getContentVarient } from '@/components/utils/helpers'
 
 const textStyles = {
   desktop: {
-    bottom: 0,
-    right: 0,
-    width: '45%',
+    width: '100%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-end',
     textAlign: 'right',
-    paddingRight: '5%',
-    paddingBottom: '5%'
+    bottom: 0,
+    right: 0
   },
+
   mobile: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     textAlign: 'center',
     position: 'relative',
-    paddingBottom: '5%'
+    paddingBottom: 1.5
   }
 }
 
 export default function Frame3Text({
-  displaySettings = { xs: 'none', md: 'flex' }
+  displaySettings = { xs: 'none', md: 'none', lg: 'flex' }
 }) {
   const headerVariant = getHeaderVarient(displaySettings, 'h3', 'h5')
   const contentVariant = getContentVarient(displaySettings)
 
+  const isLargeDisplayFlex = displaySettings.lg === 'flex'
+
   return (
     <Box
-      zIndex={1}
       position="relative"
+      ml={isLargeDisplayFlex ? 2.5 : 0}
       sx={{
-        width: '100%',
-        height: '100%',
+        width: { xs: '100%', md: '100%', lg: '33%' },
         color: 'white',
-        flexDirection: 'column',
-        justifyContent: 'center',
         display: displaySettings
       }}
     >
       <Box
         position="absolute"
-        sx={
-          displaySettings.md === 'flex' ? textStyles.desktop : textStyles.mobile
-        }
+        sx={isLargeDisplayFlex ? textStyles.desktop : textStyles.mobile}
       >
         <Typography variant={headerVariant}>
           <span style={{ fontWeight: 'bold', color: GREEN_TEXT_COLOR }}>

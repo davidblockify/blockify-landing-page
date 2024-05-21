@@ -5,25 +5,19 @@ import Box from '@mui/material/Box'
 
 import { GREEN_TEXT_COLOR } from '@/shared/constants'
 import { inter } from '@/ui/fonts'
-import { getHeaderVarient } from '@/components/utils/helpers'
 
-export default function WelcomeText({
-  displaySettings = { xs: 'none', md: 'flex' }
-}) {
-  const welcomeTextVariant = getHeaderVarient(displaySettings)
-
+export default function WelcomeText() {
   return (
     <Box
       sx={{
-        // position: 'relative',
-        display: displaySettings,
+        display: 'flex',
         flexDirection: 'column',
         alignItems: 'center'
       }}
     >
       <Typography
-        variant={welcomeTextVariant}
         sx={{
+          typography: { xs: 'h5', md: 'h2', lg: 'h2' },
           fontFamily: `var(--${inter.variable})`,
           color: 'white',
           textAlign: 'center'
