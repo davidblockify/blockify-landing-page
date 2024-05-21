@@ -1,0 +1,42 @@
+name: Deploy Production Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deployS3:
+    name: DeployS3
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      
+      - name: Install Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.20.2
+        
+      - run: yarn install
+      
+      - run: yarn build
+      
+      - run: pwd
+      
+      - run: ls -la
+
+      - name: install-aws-cli
+        uses: unfor19/install-aws-cli-action@v1
+        with:
+          version: 2                         # default
+          verbose: false                     # default
+          arch: amd64                        # allowed values: amd64, arm64
+
+      - name: Sync to S3
+        uses: chrislennon/action-aws-cli@v1.1
+        run: aws s3 sync ./out s3://blockify-landing-page
+
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
