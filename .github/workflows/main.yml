@@ -8,7 +8,7 @@ on:
 jobs:
   deployS3:
     name: DeployS3
-    runs-on: ubuntu-18.4
+    runs-on: ubuntu-20.4
     steps:
       - name: Checkout
         uses: actions/checkout@v2
