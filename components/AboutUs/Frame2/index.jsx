@@ -27,6 +27,7 @@ export default function Frame2() {
           }
         />
         <Image
+          loading="lazy"
           ref={banner1}
           className="xl:w-[60%] lg:w-[60%] 2xl:h-full lg:h-[90%] md:w-3/4 h-full min-h-[10rem]  lg:rounded-3xl rounded-md"
           src="/introduction-img.png"
@@ -47,10 +48,7 @@ export default function Frame2() {
             muted
             className="w-full h-full object-fill rounded-3xl green-filter"
           >
-            <source
-              src="https://vciflravlrgslrxhqidd.supabase.co/storage/v1/object/public/blockify-landing-page/bitcoin-statement.mp4?t=2024-05-17T09%3A18%3A25.080Z"
-              type="video/mp4"
-            />
+            <source src="/bitcoin-statement.mp4" type="video/mp4" />
           </video>
         </div>
 
@@ -78,6 +76,7 @@ export default function Frame2() {
           }
         />
         <Image
+          loading="lazy"
           ref={banner3}
           className="xl:w-[60%] lg:w-[60%] 2xl:h-full lg:h-[90%] md:w-3/4 h-full min-h-[10rem]  lg:rounded-3xl rounded-md"
           src="/value-img.png"

@@ -5,9 +5,6 @@ import CardMedia from '@mui/material/CardMedia'
 
 import Frame3Text from './Frame3Text'
 
-const backgroundUrl =
-  'https://vciflravlrgslrxhqidd.supabase.co/storage/v1/object/public/blockify-landing-page/bitcoin-bg.mp4?t=2024-05-17T10%3A46%3A52.045Z'
-
 export default function Frame3() {
   return (
     <Box
@@ -38,7 +35,7 @@ export default function Frame3() {
           loop
           muted
           style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-          src={backgroundUrl}
+          src="/background-banner.mp4"
         />
         <Frame3Text displaySettings={{ xs: 'none', md: 'flex' }} />
       </Box>
