@@ -1,8 +1,9 @@
+import ContactForm from '@/components/Contact/ContactForm'
+
 export default function ContactPage() {
   return (
-    <main>
-      <h1>CONTACT</h1>
-      <p>Nothing here yet!</p>
-    </main>
+    <div className="w-screen h-screen flex justify-center items-center ">
+      <ContactForm />
+    </div>
   )
 }

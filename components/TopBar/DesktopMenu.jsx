@@ -11,11 +11,10 @@ import { styled } from '@mui/material/styles'
 import { getTabIndex } from '../utils/helpers'
 
 import { GREEN_TEXT_COLOR } from '@/shared/constants'
-import { nunitoSans } from '@/ui/fonts'
 
 const StyledTypograpghy = styled(Typography)(({ isSelected }) => ({
   color: isSelected ? GREEN_TEXT_COLOR : 'white',
-  fontFamily: `var(--${nunitoSans.variable})`,
+  fontFamily: 'var(--font-nunito)',
   fontWeight: 'h5',
   textTransform: 'none',
   fontSize: '1.4em',
