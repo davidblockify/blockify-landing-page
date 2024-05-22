@@ -2,15 +2,15 @@ import React from 'react'
 
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
-import { useTheme } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 
 import { inter } from '@/ui/fonts'
 
+const SpanStyled = styled('span')(({ theme }) => ({
+  fontWeight: 'bold',
+  color: theme.palette.primary.main
+}))
 export default function WelcomeText() {
-  const theme = useTheme()
-
-  const primaryColor = theme.palette.primary.main
-
   return (
     <Box
       sx={{
@@ -27,15 +27,9 @@ export default function WelcomeText() {
           textAlign: 'center'
         }}
       >
-        Welcome to{' '}
-        <span style={{ fontWeight: 'bold', color: primaryColor }}>
-          Blockify
-        </span>
+        Welcome to <SpanStyled>Blockify</SpanStyled>
         <br />
-        Reorganizing the World{' '}
-        <span style={{ fontWeight: 'bold', color: primaryColor }}>
-          Through Blockchain
-        </span>
+        Reorganizing the World <SpanStyled>Through Blockchain</SpanStyled>
       </Typography>
     </Box>
   )

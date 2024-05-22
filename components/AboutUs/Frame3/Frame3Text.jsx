@@ -2,7 +2,7 @@ import React from 'react'
 
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
-import { useTheme } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 
 import { getHeaderVarient, getContentVarient } from '@/components/utils/helpers'
 
@@ -27,13 +27,14 @@ const textStyles = {
   }
 }
 
+const SpanStyled = styled('span')(({ theme }) => ({
+  fontWeight: 'bold',
+  color: theme.palette.primary.main
+}))
+
 export default function Frame3Text({
   displaySettings = { xs: 'none', md: 'none', lg: 'flex' }
 }) {
-  const theme = useTheme()
-
-  const primaryColor = theme.palette.primary.main
-
   const headerVariant = getHeaderVarient(displaySettings, 'h3', 'h5')
   const contentVariant = getContentVarient(displaySettings)
 
@@ -54,7 +55,7 @@ export default function Frame3Text({
         sx={isLargeDisplayFlex ? textStyles.desktop : textStyles.mobile}
       >
         <Typography variant={headerVariant}>
-          <span style={{ fontWeight: 'bold', color: primaryColor }}>Call</span>
+          <SpanStyled>Call</SpanStyled>
           <span> to action</span>
         </Typography>
         <br />
