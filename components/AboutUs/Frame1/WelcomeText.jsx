@@ -10,6 +10,7 @@ const SpanStyled = styled('span')(({ theme }) => ({
   fontWeight: 'bold',
   color: theme.palette.primary.main
 }))
+
 export default function WelcomeText() {
   return (
     <Box
@@ -20,7 +21,6 @@ export default function WelcomeText() {
       }}
     >
       <Typography
-        color="white"
         sx={{
           typography: { xs: 'h5', md: 'h2', lg: 'h2' },
           fontFamily: `var(--${inter.variable})`,
