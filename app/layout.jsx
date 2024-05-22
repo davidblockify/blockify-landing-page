@@ -1,8 +1,10 @@
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
+import { Container } from '@mui/material'
 
 import TopBar from '@/components/TopBar'
 import BackgroundVideo from '@/components/BackgroundVideo'
 import { inter } from '@/ui/fonts'
+
 import './globals.css'
 
 export const metadata = {
@@ -16,7 +18,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className}`}>
         <AppRouterCacheProvider>
           <TopBar />
-          <main>{children}</main>
+          <Container maxWidth="lg">{children}</Container>
           <BackgroundVideo />
         </AppRouterCacheProvider>
       </body>
