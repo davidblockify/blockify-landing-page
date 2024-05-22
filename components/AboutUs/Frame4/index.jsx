@@ -30,28 +30,23 @@ export default function Frame4() {
     </span>
   )
   const Image1 = (
-    <Image src={image1} alt="image-4-1" style={{ objectFit: 'contain' }} />
+    <Image
+      src={image1}
+      alt="image-4-1"
+      sizes="100vw"
+      style={{ width: '100%', height: 'auto' }}
+    />
   )
 
   const Image2 = (
     <Image
       src={image2}
       alt="image-4-2"
-      height={389}
-      width={573}
-      overflow="hidden"
-      style={{ objectFit: 'cover' }}
+      sizes="100vw"
+      style={{ width: '100%', height: 'auto' }}
     />
   )
-  const Image3 = (
-    <Image
-      src={image3}
-      alt="image-4-3"
-      height={428}
-      width={291}
-      style={{ objectFit: 'contain' }}
-    />
-  )
+  const Image3 = <Image src={image3} alt="image-4-3" height={428} width={291} />
   return (
     <Box m="10%" width="80vw" display="flex" flexDirection="row">
       <Box
@@ -61,13 +56,16 @@ export default function Frame4() {
         sx={{ width: { xs: '100%', md: '50%', lg: '50%' } }}
       >
         <VerticalBanner
-          header={frame4Header}
-          content={frame4Content}
+          headline={frame4Header}
+          bodyText={frame4Content}
           media={Image1}
+          textAlign={{ xs: 'center', md: 'left' }}
+          alignItems={{ xs: 'center', md: 'flex-start' }}
         />
       </Box>
       <Box display={{ xs: 'none', md: 'flex' }} flexDirection="column">
-        <Box mb={5}>{Image2}</Box>
+        <Box mb={4}> {Image2}</Box>
+
         {Image3}
       </Box>
     </Box>

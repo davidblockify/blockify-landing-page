@@ -1,9 +1,17 @@
 import React from 'react'
 
+import PropTypes from 'prop-types'
+
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 
-export default function VerticalBanner({ header, content, media }) {
+export default function VerticalBanner({
+  headline,
+  bodyText,
+  media,
+  textAlign = 'left',
+  alignItems = 'flex-start'
+}) {
   return (
     <Box
       position="relative"
@@ -24,17 +32,17 @@ export default function VerticalBanner({ header, content, media }) {
           sx={{
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',
-            textAlign: 'center',
+            alignItems: alignItems,
+            textAlign: textAlign,
             paddingBottom: 1.5
           }}
         >
           <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }}>
-            {header}
+            {headline}
           </Typography>
           <br />
           <Typography sx={{ typography: { xs: 'body1', md: 'h6' } }}>
-            {content}
+            {bodyText}
           </Typography>
         </Box>
       </Box>
@@ -43,11 +51,17 @@ export default function VerticalBanner({ header, content, media }) {
         width="100%"
         justifyContent="center"
         alignItems="center"
-        flexGrow={1}
         display="flex"
       >
         {media}
       </Box>
     </Box>
   )
+}
+
+VerticalBanner.propTypes = {
+  headline: PropTypes.string,
+  bodyText: PropTypes.string,
+  textAlign: PropTypes.string,
+  alignItems: PropTypes.string
 }
