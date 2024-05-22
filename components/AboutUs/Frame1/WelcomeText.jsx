@@ -3,7 +3,6 @@ import React from 'react'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 
-import { GREEN_TEXT_COLOR } from '@/shared/constants'
 import { inter } from '@/ui/fonts'
 
 export default function WelcomeText() {
@@ -24,12 +23,10 @@ export default function WelcomeText() {
         }}
       >
         Welcome to{' '}
-        <span style={{ fontWeight: 'bold', color: GREEN_TEXT_COLOR }}>
-          Blockify
-        </span>
+        <span style={{ fontWeight: 'bold', fontSize: '1.2em' }}>Blockify</span>
         <br />
         Reorganizing the World{' '}
-        <span style={{ fontWeight: 'bold', color: GREEN_TEXT_COLOR }}>
+        <span style={{ fontWeight: 'bold', fontSize: '1.2em' }}>
           Through Blockchain
         </span>
       </Typography>

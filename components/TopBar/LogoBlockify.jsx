@@ -20,6 +20,7 @@ export default function LogoBlockify({ displaySettings }) {
 
       <Typography
         variant={blockifyVariant}
+        color="#01161B"
         noWrap
         component="a"
         href="/"
@@ -28,7 +29,6 @@ export default function LogoBlockify({ displaySettings }) {
           flexGrow: { blockifyFlexGrow },
           fontFamily: 'monospace',
           fontWeight: { xs: 400, sm: 500, md: 700 },
-          color: 'inherit',
           textDecoration: 'none'
         }}
       >
