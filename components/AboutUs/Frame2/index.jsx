@@ -48,7 +48,7 @@ export default function Frame2() {
             muted
             className="w-full h-full object-fill rounded-3xl green-filter"
           >
-            <source src="bitcoin-statement.mp4" type="video/mp4" />
+            <source src="/bitcoin-statement.mp4" type="video/mp4" />
           </video>
         </div>
 
