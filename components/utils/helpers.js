@@ -15,7 +15,7 @@ export const getTabIndex = (path) => {
 
 export const getHeaderVarient = (
   displaySettings,
-  desktopVariant = 'h2',
+  desktopVariant = 'h3',
   mobileVarient = 'h5'
 ) => {
   return displaySettings.lg === 'flex' ? desktopVariant : mobileVarient
