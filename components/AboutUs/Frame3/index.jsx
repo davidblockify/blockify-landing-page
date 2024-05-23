@@ -18,6 +18,7 @@ export default function Frame3() {
       style={{ width: '100%', height: 'auto' }}
     />
   )
+
   return (
     <Box
       position="relative"
