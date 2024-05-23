@@ -4,22 +4,15 @@ import { CardContent, Typography } from '@mui/material'
 
 export default function Card({ imgSrc, title, description }) {
   return (
-    <CardContent className="bg-white relative">
+    <CardContent className="bg-white flex flex-col items-center">
       {imgSrc && (
-        <Image
-          src={imgSrc}
-          width={100}
-          height={100}
-          alt={title}
-          loading="lazy"
-          className="absolute -top-12 left-5"
-        />
+        <Image src={imgSrc} width={84} height={84} alt={title} loading="lazy" />
       )}
       <Typography
         fontWeight="bold"
         gutterBottom
-        variant="h5"
-        className={`${imgSrc ? 'pt-10' : ''}`}
+        variant="h6"
+        className={`${imgSrc ? 'pt-5' : ''}`}
       >
         {title}
       </Typography>
