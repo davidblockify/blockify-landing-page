@@ -10,6 +10,9 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import { useAboutUsFrame2Animations } from '@/hooks/useAboutUsFrame2Animations'
 import BannerCard from '@/components/BannerCard'
 import ContentText from '@/components/ContentText'
+import image1 from '@/public/about-us-2-1.png'
+import image2 from '@/public/about-us-2-2.png'
+import image3 from '@/public/about-us-2-3.png'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -28,26 +31,25 @@ export default function Frame2() {
             'is pioneering the future of digital innovation with cutting-edge blockchain solutions tailored for the Web 3.0 era.'
           }
         />
+
         <Image
-          loading="lazy"
           ref={banner1}
-          className="xl:w-[60%] lg:w-[60%] 2xl:h-full lg:h-[90%] h-full min-h-[10rem] lg:rounded-3xl rounded-md"
-          src="/about-us-2-1.png"
-          width={1406}
-          height={792}
+          src={image1}
+          loading="lazy"
           alt="introduction image"
+          sizes="100vw"
+          style={{ width: '100%', height: 'auto', borderRadius: 20 }}
         />
       </BannerCard>
 
       <BannerCard flexDirection={'flex-col-reverse'}>
         <Image
-          loading="lazy"
           ref={banner2}
-          className="xl:w-[60%] lg:w-[60%] 2xl:h-full lg:h-[90%] h-full min-h-[10rem] lg:rounded-3xl rounded-md"
-          src="/about-us-2-2.png"
-          width={582}
-          height={395}
+          src={image2}
+          loading="lazy"
           alt="introduction image"
+          sizes="100vw"
+          style={{ width: '100%', height: 'auto' }}
         />
 
         <ContentText
@@ -73,14 +75,13 @@ export default function Frame2() {
             "we recognize that each business has unique needs. That's why we offer customized support from the initial stages of project planning through to development and execution."
           }
         />
+
         <Image
-          loading="lazy"
           ref={banner3}
-          className="xl:w-[60%] lg:w-[60%] 2xl:h-full lg:h-[90%] h-full min-h-[10rem] lg:rounded-3xl rounded-md"
-          src="/about-us-2-3.png"
-          width={1406}
-          height={792}
+          src={image3}
           alt="introduction image"
+          sizes="100vw"
+          style={{ width: '100%', height: 'auto' }}
         />
       </BannerCard>
     </div>
