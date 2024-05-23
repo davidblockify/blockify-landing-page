@@ -4,8 +4,6 @@ import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
 
-import { getHeaderVarient, getContentVarient } from '@/components/utils/helpers'
-
 const textStyles = {
   desktop: {
     width: '100%',
@@ -35,9 +33,6 @@ const SpanStyled = styled('span')(({ theme }) => ({
 export default function Frame3Text({
   displaySettings = { xs: 'none', md: 'none', lg: 'flex' }
 }) {
-  const headerVariant = getHeaderVarient(displaySettings, 'h3', 'h5')
-  const contentVariant = getContentVarient(displaySettings)
-
   const isLargeDisplayFlex = displaySettings.lg === 'flex'
 
   return (
@@ -53,12 +48,12 @@ export default function Frame3Text({
         position="absolute"
         sx={isLargeDisplayFlex ? textStyles.desktop : textStyles.mobile}
       >
-        <Typography variant={headerVariant}>
+        <Typography sx={{ typography: { xs: 'h5', md: 'h3', lg: 'h3' } }}>
           <SpanStyled>Call</SpanStyled>
           <span> to action</span>
         </Typography>
         <br />
-        <Typography variant={contentVariant}>
+        <Typography sx={{ typography: { xs: 'body', md: 'h6', lg: 'h6' } }}>
           <span>
             Whether you&apos;re looking to intergrate blockchain into your
             existing operations or start a new venture, we prodive the expertise
