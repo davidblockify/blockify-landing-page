@@ -15,11 +15,7 @@ export default function Frame1() {
         flexDirection: 'column',
         alignItems: 'center',
         width: '100%',
-        height: '100vh',
-        backgroundImage: 'url(/background.png)',
-        backgroundSize: 'fixed',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center'
+        height: '100vh'
       }}
     >
       <Box mb={4}>
