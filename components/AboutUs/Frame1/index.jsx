@@ -1,6 +1,4 @@
-'use client'
-
-import React, { useRef } from 'react'
+import React from 'react'
 
 import Image from 'next/image'
 
@@ -9,8 +7,6 @@ import Box from '@mui/material/Box'
 import WelcomeText from './WelcomeText'
 
 export default function Frame1() {
-  const container = useRef()
-
   return (
     <Box
       position="static"
@@ -19,12 +15,15 @@ export default function Frame1() {
         flexDirection: 'column',
         alignItems: 'center',
         width: '100%',
-        height: '100vh'
+        height: '100vh',
+        backgroundImage: 'url(/background.png)',
+        backgroundSize: 'fixed',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center'
       }}
     >
       <Box mb={4}>
         <Image
-          ref={container}
           id="logo"
           src="/logo-blured.png"
           width={555}
