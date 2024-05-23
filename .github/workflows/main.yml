@@ -21,20 +21,21 @@ jobs:
       - run: yarn install
       
       - run: yarn build
+        env: 
+          NEXT_PUBLIC_MAIL_SERVICE_ID: ${{ vars.NEXT_PUBLIC_MAIL_SERVICE_ID}}
+          NEXT_PUBLIC_MAIL_TEMPLATE_ID: ${{ vars.NEXT_PUBLIC_MAIL_TEMPLATE_ID}}
+          NEXT_PUBLIC_MAIL_PUBLIC_KEY: ${{ vars.NEXT_PUBLIC_MAIL_PUBLIC_KEY}}
       
-      - run: pwd
+      - run: echo ${{ vars.NEXT_PUBLIC_MAIL_SERVICE_ID}}
       
       - run: ls -la
 
-      - name: install-aws-cli
-        uses: unfor19/install-aws-cli-action@v1
-        with:
-          version: 2                         # default
-          verbose: false                     # default
-          arch: amd64                        # allowed values: amd64, arm64
-
-      - name: Sync to S3
-        run: aws s3 sync ./out s3://blockify-landing-page
+      - run: pwd
+      
+      - name: Deploy to S3
+        #run: aws s3 sync ./out s3://blockify-landing-page
+        run: sh deploy.sh
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}

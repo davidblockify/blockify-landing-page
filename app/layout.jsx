@@ -1,8 +1,9 @@
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
+import { Providers } from './context/provider'
 
 import TopBar from '@/components/TopBar'
 import BackgroundVideo from '@/components/BackgroundVideo'
 import { inter, nunitoSans } from '@/ui/fonts'
+
 import './globals.css'
 
 export const metadata = {
@@ -14,11 +15,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.variable} ${nunitoSans.variable}`}>
-        <AppRouterCacheProvider>
+        <Providers>
           <TopBar />
           <main>{children}</main>
           <BackgroundVideo />
-        </AppRouterCacheProvider>
+        </Providers>
       </body>
     </html>
   )

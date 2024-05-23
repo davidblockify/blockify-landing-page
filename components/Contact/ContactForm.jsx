@@ -4,6 +4,8 @@ import { useRef } from 'react'
 
 import { useForm, Controller } from 'react-hook-form'
 import emailjs from '@emailjs/browser'
+import { useSnackbar } from 'notistack'
+import { matchIsValidTel, MuiTelInput } from 'mui-tel-input'
 
 import {
   Box,
@@ -16,6 +18,32 @@ import {
 import { alpha, styled } from '@mui/material/styles'
 
 const BootstrapInput = styled(InputBase)(({ theme }) => ({
+  'label + &': {
+    marginTop: theme.spacing(3)
+  },
+  '& .MuiInputBase-input': {
+    borderRadius: 4,
+    position: 'relative',
+    backgroundColor: '#E0E3E7',
+    border: '1px solid',
+    borderColor: '#E0E3E7',
+    width: 'auto',
+    padding: '10px 12px',
+    fontSize: 20,
+    transition: theme.transitions.create([
+      'border-color',
+      'background-color',
+      'box-shadow'
+    ]),
+    fontFamily: 'var(--font-nunito)',
+    '&:focus': {
+      boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
+      borderColor: theme.palette.primary.main
+    }
+  }
+}))
+
+const BootstrapPhoneInput = styled(MuiTelInput)(({ theme }) => ({
   'label + &': {
     marginTop: theme.spacing(3)
   },
@@ -64,7 +92,6 @@ const BootstrapTextArea = styled(TextField)(({ theme }) => ({
 
 const ContactForm = () => {
   const form = useRef()
-
   const {
     control,
     handleSubmit,
@@ -77,6 +104,9 @@ const ContactForm = () => {
       message: ''
     }
   })
+
+  const { enqueueSnackbar } = useSnackbar()
+
   const onSubmit = (data) => {
     console.log(data)
     emailjs
@@ -91,9 +121,15 @@ const ContactForm = () => {
       .then(
         () => {
           console.log('SUCCESS!')
+          enqueueSnackbar('Thanks for submit your request!', {
+            variant: 'success'
+          })
         },
         (error) => {
           console.log('FAILED...', error)
+          enqueueSnackbar('Oops something went wrong', {
+            variant: 'error'
+          })
         }
       )
   }
@@ -122,7 +158,7 @@ const ContactForm = () => {
               letterSpacing: '-1.1%'
             }}
           >
-            Name
+            Name <span className="text-red-600">*</span>
           </Typography>
           <Controller
             name="name"
@@ -136,6 +172,7 @@ const ContactForm = () => {
             </p>
           )}
         </FormControl>
+
         <FormControl variant="standard">
           <Typography
             variant="p"
@@ -146,7 +183,7 @@ const ContactForm = () => {
               letterSpacing: '-1.1%'
             }}
           >
-            Email
+            Email <span className="text-red-600">*</span>
           </Typography>
           <Controller
             name="email"
@@ -168,6 +205,7 @@ const ContactForm = () => {
             </p>
           )}
         </FormControl>
+
         <FormControl variant="standard">
           <Typography
             variant="p"
@@ -178,13 +216,30 @@ const ContactForm = () => {
               letterSpacing: '-1.1%'
             }}
           >
-            Phone
+            Phone <span className="text-red-600">*</span>
           </Typography>
+
           <Controller
-            name="phone"
             control={control}
-            render={({ field }) => <BootstrapInput {...field} id="phone" />}
+            rules={{
+              required: true,
+              validate: (value) => matchIsValidTel(value)
+            }}
+            render={({ field }) => (
+              <BootstrapPhoneInput {...field} defaultCountry="VN" required />
+            )}
+            name="phone"
           />
+          {errors?.phone?.type === 'validate' && (
+            <p className="text-app-green font-nunito font-medium">
+              Tel is invalid!
+            </p>
+          )}
+          {errors?.phone?.type === 'required' && (
+            <p className="text-app-green font-nunito font-medium">
+              Tel is required!
+            </p>
+          )}
         </FormControl>
       </Box>
 
@@ -219,6 +274,7 @@ const ContactForm = () => {
           )}
         />
       </FormControl>
+
       <Button
         variant="contained"
         color="success"
