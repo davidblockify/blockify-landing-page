@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v1
       
       - name: Install Node
         uses: actions/setup-node@v1
@@ -21,11 +21,17 @@ jobs:
       - run: yarn install
       
       - run: yarn build
+        env: 
+          NEXT_PUBLIC_MAIL_SERVICE_ID: ${{ vars.NEXT_PUBLIC_MAIL_SERVICE_ID}}
+          NEXT_PUBLIC_MAIL_TEMPLATE_ID: ${{ vars.NEXT_PUBLIC_MAIL_TEMPLATE_ID}}
+          NEXT_PUBLIC_MAIL_PUBLIC_KEY: ${{ vars.NEXT_PUBLIC_MAIL_PUBLIC_KEY}}
       
-      - run: pwd
+      - run: echo ${{ vars.NEXT_PUBLIC_MAIL_SERVICE_ID}}
       
       - run: ls -la
 
+      - run: pwd
+      
       - name: Deploy to S3
         #run: aws s3 sync ./out s3://blockify-landing-page
         run: sh deploy.sh
