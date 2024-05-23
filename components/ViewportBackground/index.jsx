@@ -4,6 +4,8 @@ import { usePathname } from 'next/navigation'
 
 import Background from '../Background'
 
+import ServiceBanner from '@/public/service-banner.png'
+
 export default function ViewportBackground({ children }) {
   const pathname = usePathname()
   const isHome = pathname === '/'
@@ -13,7 +15,7 @@ export default function ViewportBackground({ children }) {
     <div
       className={`mx-auto my-16 h-screen ${isHome ? 'bg-[url(/background.png)] bg-cover bg-center' : ''}`}
     >
-      {isServicePage && <Background imgSrc="service-banner.png" />}
+      {isServicePage && <Background imgSrc={ServiceBanner} />}
       {children}
     </div>
   )
