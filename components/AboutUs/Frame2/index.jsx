@@ -7,10 +7,9 @@ import Image from 'next/image'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
-import BannerCard from './BannerCard'
-import ContentText from './ContentText'
-
 import { useAboutUsFrame2Animations } from '@/hooks/useAboutUsFrame2Animations'
+import BannerCard from '@/components/BannerCard'
+import ContentText from '@/components/ContentText'
 
 gsap.registerPlugin(ScrollTrigger)
 
