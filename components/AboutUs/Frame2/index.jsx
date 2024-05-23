@@ -32,7 +32,7 @@ export default function Frame2() {
           loading="lazy"
           ref={banner1}
           className="xl:w-[60%] lg:w-[60%] 2xl:h-full lg:h-[90%] h-full min-h-[10rem] lg:rounded-3xl rounded-md"
-          src="/introduction-img.png"
+          src="/about-us-2-1.png"
           width={1406}
           height={792}
           alt="introduction image"
@@ -40,19 +40,15 @@ export default function Frame2() {
       </BannerCard>
 
       <BannerCard flexDirection={'flex-col-reverse'}>
-        <div
+        <Image
+          loading="lazy"
           ref={banner2}
-          className="xl:w-[60%] lg:w-[60%] 2xl:h-full lg:h-[90%] lg:w-3/4 md:w-full h-full min-h-[10rem] lg:rounded-3xl rounded-md "
-        >
-          <video
-            autoPlay
-            loop
-            muted
-            className="w-full h-full object-fill rounded-3xl green-filter"
-          >
-            <source src="/bitcoin-statement.mp4" type="video/mp4" />
-          </video>
-        </div>
+          className="xl:w-[60%] lg:w-[60%] 2xl:h-full lg:h-[90%] h-full min-h-[10rem] lg:rounded-3xl rounded-md"
+          src="/about-us-2-2.png"
+          width={582}
+          height={395}
+          alt="introduction image"
+        />
 
         <ContentText
           id={'card2'}
@@ -81,7 +77,7 @@ export default function Frame2() {
           loading="lazy"
           ref={banner3}
           className="xl:w-[60%] lg:w-[60%] 2xl:h-full lg:h-[90%] h-full min-h-[10rem] lg:rounded-3xl rounded-md"
-          src="/value-img.png"
+          src="/about-us-2-3.png"
           width={1406}
           height={792}
           alt="introduction image"
