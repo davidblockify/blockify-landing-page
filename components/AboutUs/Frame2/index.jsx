@@ -1,5 +1,8 @@
 /* eslint-disable quotes */
 'use client'
+
+import React from 'react'
+
 import Image from 'next/image'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -15,7 +18,7 @@ export default function Frame2() {
   const { banner1, banner2, banner3 } = useAboutUsFrame2Animations()
 
   return (
-    <div className="flex flex-col items-center gap-10 w-full p-10 overflow-x-hidden">
+    <div className="flex flex-col items-center gap-10 w-full overflow-x-hidden">
       <BannerCard flexDirection={'flex-col'}>
         <ContentText
           id={'card1'}
@@ -29,7 +32,7 @@ export default function Frame2() {
         <Image
           loading="lazy"
           ref={banner1}
-          className="xl:w-[60%] lg:w-[60%] 2xl:h-full lg:h-[90%] md:w-3/4 h-full min-h-[10rem]  lg:rounded-3xl rounded-md"
+          className="xl:w-[60%] lg:w-[60%] 2xl:h-full lg:h-[90%] h-full min-h-[10rem] lg:rounded-3xl rounded-md"
           src="/introduction-img.png"
           width={1406}
           height={792}
@@ -40,7 +43,7 @@ export default function Frame2() {
       <BannerCard flexDirection={'flex-col-reverse'}>
         <div
           ref={banner2}
-          className="xl:w-[60%] lg:w-[60%] 2xl:h-full lg:h-[90%] md:w-3/4 h-full min-h-[10rem] lg:rounded-3xl rounded-md "
+          className="xl:w-[60%] lg:w-[60%] 2xl:h-full lg:h-[90%] lg:w-3/4 md:w-full h-full min-h-[10rem] lg:rounded-3xl rounded-md "
         >
           <video
             autoPlay
@@ -78,7 +81,7 @@ export default function Frame2() {
         <Image
           loading="lazy"
           ref={banner3}
-          className="xl:w-[60%] lg:w-[60%] 2xl:h-full lg:h-[90%] md:w-3/4 h-full min-h-[10rem]  lg:rounded-3xl rounded-md"
+          className="xl:w-[60%] lg:w-[60%] 2xl:h-full lg:h-[90%] h-full min-h-[10rem] lg:rounded-3xl rounded-md"
           src="/value-img.png"
           width={1406}
           height={792}
