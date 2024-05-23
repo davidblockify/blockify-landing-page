@@ -7,11 +7,9 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 
-import { GREEN_TEXT_COLOR } from '@/shared/constants'
 import { nunitoSans } from '@/ui/fonts'
 
 const StyledTypograpghy = styled(Typography)(({}) => ({
-  color: GREEN_TEXT_COLOR,
   fontFamily: `var(--${nunitoSans.variable})`,
   fontWeight: 'h5',
   textTransform: 'none',

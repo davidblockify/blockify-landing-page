@@ -9,6 +9,7 @@ import WelcomeText from './WelcomeText'
 export default function Frame1() {
   return (
     <Box
+      py={{ xs: '15vh', md: '0' }}
       position="static"
       sx={{
         display: 'flex',
@@ -18,7 +19,7 @@ export default function Frame1() {
         height: '100vh'
       }}
     >
-      <Box mb={4}>
+      <Box>
         <Image
           id="logo"
           src="/logo-blured.png"

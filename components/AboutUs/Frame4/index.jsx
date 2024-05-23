@@ -1,25 +1,26 @@
+'use client'
 import React from 'react'
 
 import Image from 'next/image'
 
 import Box from '@mui/material/Box'
+import { styled } from '@mui/material/styles'
 
 import VerticalBanner from '@/components/shared/VerticalBanner'
 import image1 from '@/public/about-us-4-1.png'
 import image2 from '@/public/about-us-4-2.png'
 import image3 from '@/public/about-us-4-3.png'
-import { GREEN_TEXT_COLOR } from '@/shared/constants'
+
+const SpanStyled = styled('span')(({ theme }) => ({
+  fontWeight: 'bold',
+  color: theme.palette.primary.main
+}))
 
 export default function Frame4() {
   const frame4Headline = (
     <>
-      <span style={{ fontWeight: 'bold', color: GREEN_TEXT_COLOR }}>
-        Engagement
-      </span>
-      <span> and</span>{' '}
-      <span style={{ fontWeight: 'bold', color: GREEN_TEXT_COLOR }}>
-        Vision
-      </span>
+      <SpanStyled>Engagement</SpanStyled>
+      <span> and</span> <SpanStyled>Vision</SpanStyled>
     </>
   )
   const frame4BodyText = (
