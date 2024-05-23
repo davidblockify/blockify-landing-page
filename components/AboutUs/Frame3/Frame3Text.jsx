@@ -46,7 +46,6 @@ export default function Frame3Text({
       ml={isLargeDisplayFlex ? 2.5 : 0}
       sx={{
         width: { xs: '100%', md: '100%', lg: '33%' },
-        color: 'white',
         display: displaySettings
       }}
     >

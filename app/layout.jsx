@@ -5,7 +5,6 @@ import { Box } from '@mui/material'
 import { ThemeProvider } from '@mui/material/styles'
 
 import TopBar from '@/components/TopBar'
-import BackgroundVideo from '@/components/BackgroundVideo'
 import { inter } from '@/ui/fonts'
 import theme from '@/theme'
 import './globals.css'
@@ -25,7 +24,6 @@ export default function RootLayout({ children }) {
             <Box m="10%" width="80vw">
               {children}
             </Box>
-            <BackgroundVideo />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

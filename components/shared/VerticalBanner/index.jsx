@@ -23,7 +23,6 @@ export default function VerticalBanner({
         position="relative"
         sx={{
           width: '100%',
-          color: 'white',
           display: 'flex'
         }}
       >

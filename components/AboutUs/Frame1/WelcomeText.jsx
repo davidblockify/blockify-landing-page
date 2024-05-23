@@ -22,7 +22,7 @@ export default function WelcomeText() {
     >
       <Typography
         sx={{
-          typography: { xs: 'h5', md: 'h2', lg: 'h2' },
+          typography: { xs: 'h5', md: 'h2' },
           fontFamily: `var(--${inter.variable})`,
           textAlign: 'center'
         }}
