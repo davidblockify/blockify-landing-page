@@ -1,5 +1,5 @@
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
-import { Container } from '@mui/material'
+import { Box } from '@mui/material'
 
 import TopBar from '@/components/TopBar'
 import BackgroundVideo from '@/components/BackgroundVideo'
@@ -18,7 +18,9 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className}`}>
         <AppRouterCacheProvider>
           <TopBar />
-          <Container maxWidth="lg">{children}</Container>
+          <Box m="10%" width="80vw">
+            {children}
+          </Box>
           <BackgroundVideo />
         </AppRouterCacheProvider>
       </body>
