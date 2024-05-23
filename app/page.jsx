@@ -11,7 +11,7 @@ export default function Home() {
   const frames = [Frame1, Frame2, Frame3, Frame4]
 
   return (
-    <Box pt="5%">
+    <Box pt="5%" pb="15%">
       {frames.map((Frame, index) => (
         <Box key={index} sx={{ mt: index === 0 ? 0 : 4 }}>
           <Frame />
