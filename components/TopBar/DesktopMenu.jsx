@@ -1,38 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 
-import { getTabIndex } from '../utils/helpers'
-
 import { nunitoSans } from '@/ui/fonts'
 
-const StyledTypograpghy = styled(Typography)(({ theme, isSelected }) => ({
-  color: isSelected ? theme.palette.primary.main : 'white',
+const StyledTypograpghy = styled(Typography)(({}) => ({
   fontFamily: `var(--${nunitoSans.variable})`,
   fontWeight: 'h5',
   textTransform: 'none',
   fontSize: '1.4em',
-  lineHeight: '1.4em',
-  '&:hover': {
-    color: theme.palette.primary.main
-  }
+  lineHeight: '1.4em'
 }))
 
 export default function DesktopMenu({ menuItems }) {
-  const pathname = usePathname() || '/'
-  const [currentTabPathname, setCurrentTabPathname] = useState(
-    getTabIndex(pathname)
-  )
-  useEffect(() => {
-    setCurrentTabPathname(pathname)
-  }, [pathname])
-
   return (
     <Box
       sx={{
@@ -43,14 +28,10 @@ export default function DesktopMenu({ menuItems }) {
     >
       <Box sx={{ marginTop: '1.5rem' }}>
         {menuItems.map((menuItem) => {
-          const isSelected = menuItem.href === currentTabPathname
-
           return (
             <Button key={menuItem.index}>
               <Link href={menuItem.href}>
-                <StyledTypograpghy isSelected={isSelected}>
-                  {menuItem.label}
-                </StyledTypograpghy>
+                <StyledTypograpghy>{menuItem.label}</StyledTypograpghy>
               </Link>
             </Button>
           )

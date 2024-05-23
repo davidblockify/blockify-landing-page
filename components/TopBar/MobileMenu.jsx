@@ -26,7 +26,7 @@ export default function MobileMenu({ menuItems }) {
         aria-controls="menu-appbar"
         aria-haspopup="true"
         onClick={handleOpenNavMenu}
-        color="inherit"
+        color="black"
       >
         <MenuIcon />
       </IconButton>

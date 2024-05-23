@@ -7,6 +7,7 @@ import { ThemeProvider } from '@mui/material/styles'
 import TopBar from '@/components/TopBar'
 import { inter } from '@/ui/fonts'
 import theme from '@/theme'
+import ViewportBackground from '@/components/ViewportBackground'
 import './globals.css'
 
 export const metadata = {
@@ -21,9 +22,11 @@ export default function RootLayout({ children }) {
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <TopBar />
-            <Box m="10%" width="80vw">
-              {children}
-            </Box>
+            <ViewportBackground>
+              <Box mx="10%" width="80wv">
+                {children}
+              </Box>
+            </ViewportBackground>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
