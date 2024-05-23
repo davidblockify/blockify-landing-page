@@ -2,9 +2,14 @@ import React from 'react'
 
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
+import { styled } from '@mui/material/styles'
 
-import { GREEN_TEXT_COLOR } from '@/shared/constants'
 import { inter } from '@/ui/fonts'
+
+const SpanStyled = styled('span')(({ theme }) => ({
+  fontWeight: 'bold',
+  color: theme.palette.primary.main
+}))
 
 export default function WelcomeText() {
   return (
@@ -17,21 +22,14 @@ export default function WelcomeText() {
     >
       <Typography
         sx={{
-          typography: { xs: 'h5', md: 'h2', lg: 'h2' },
+          typography: { xs: 'h5', md: 'h2' },
           fontFamily: `var(--${inter.variable})`,
-          color: 'white',
           textAlign: 'center'
         }}
       >
-        Welcome to{' '}
-        <span style={{ fontWeight: 'bold', color: GREEN_TEXT_COLOR }}>
-          Blockify
-        </span>
+        Welcome to <SpanStyled>Blockify</SpanStyled>
         <br />
-        Reorganizing the World{' '}
-        <span style={{ fontWeight: 'bold', color: GREEN_TEXT_COLOR }}>
-          Through Blockchain
-        </span>
+        Reorganizing the World <SpanStyled>Through Blockchain</SpanStyled>
       </Typography>
     </Box>
   )
