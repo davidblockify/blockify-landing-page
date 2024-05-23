@@ -55,7 +55,7 @@ export default function Frame4() {
     />
   )
   return (
-    <Box m="10%" width="80vw" display="flex" flexDirection="row">
+    <div className="flex">
       <Box
         mr={{ xs: 0, md: 2.5 }}
         flexDirection="column"
@@ -79,6 +79,6 @@ export default function Frame4() {
         <Box mb={4}> {Image2}</Box>
         <Box width="66%">{Image3}</Box>
       </Box>
-    </Box>
+    </div>
   )
 }
