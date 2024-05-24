@@ -11,7 +11,6 @@ import ServiceImage4 from '@/public/service-4.svg'
 import ServiceImage5 from '@/public/service-5.svg'
 import ServiceImage6 from '@/public/service-6.svg'
 import HeadingText from '@/components/HeadingText'
-import withNoSSR from '@/hocs/withNoSSR'
 import useViewPort from '@/hooks/useViewPort'
 
 function ServicePage() {
@@ -86,4 +85,4 @@ function ServicePage() {
   )
 }
 
-export default withNoSSR(ServicePage)
+export default ServicePage
