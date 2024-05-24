@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 import ContactForm from '@/components/Contact/ContactForm'
 import ContactFormContainer from '@/components/Contact/ContactFormContainer'
