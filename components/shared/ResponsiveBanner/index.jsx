@@ -62,27 +62,16 @@ function ResponsiveBanner({
   return (
     <Box
       position="relative"
-      flexDirection={{ xs: 'column', md: 'column', lg: 'row' }}
+      flexDirection={{
+        xs: 'column',
+        md: 'column',
+        lg: alignRight && !isMediumScreenWidth ? 'row-reverse' : 'row'
+      }}
       display="flex"
       width="100%"
     >
-      {isMediumScreenWidth ? (
-        <>
-          {textContent} {mediaContent}
-        </>
-      ) : (
-        <>
-          {alignRight ? (
-            <>
-              {mediaContent} {textContent}
-            </>
-          ) : (
-            <>
-              {textContent} {mediaContent}
-            </>
-          )}
-        </>
-      )}
+      {textContent}
+      {mediaContent}
     </Box>
   )
 }
