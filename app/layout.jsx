@@ -14,7 +14,7 @@ export const metadata = {
   title: 'Blockify',
   description: 'Blockify',
   icons: {
-    icon: '/logo.png'
+    icon: '/company-logo.png'
   }
 }
 
