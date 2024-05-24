@@ -32,7 +32,6 @@
     "gsap": "^3.12.5",
     "mui-tel-input": "^5.1.2",
     "next": "14.2.3",
-    "notistack": "^3.0.1",
     "prettier": "^3.2.5",
     "prop-types": "^15.8.1",
     "react": "^18",
