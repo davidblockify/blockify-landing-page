@@ -3,7 +3,6 @@ import React from 'react'
 import Box from '@mui/material/Box'
 
 import Frame1 from '@/components/AboutUs/Frame1'
-// import Frame2 from '@/components/AboutUs/Frame2'
 import Frame2_1 from '@/components/AboutUs/Frame2/Frame2_1'
 import Frame2_2 from '@/components/AboutUs/Frame2/Frame2_2'
 import Frame2_3 from '@/components/AboutUs/Frame2/Frame2_3'
