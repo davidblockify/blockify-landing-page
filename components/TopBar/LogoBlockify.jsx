@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 
-import Logo from '@/public/Logo.png'
+import Logo from '@/public/logo.png'
 
 export default function LogoBlockify({ displaySettings }) {
   const blockifyVariant = displaySettings.md !== 'flex' ? 'h5' : 'h4'

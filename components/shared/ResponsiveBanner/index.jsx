@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 
 import PropTypes from 'prop-types'
@@ -5,26 +6,36 @@ import PropTypes from 'prop-types'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 
-export default function HorizontalBanner({
+import useViewPort from '@/hooks/useViewPort'
+
+function ResponsiveBanner({
   headline,
   bodyText,
   media,
   mediaWidth = '66%',
-  textAlign = 'left'
+  alignRight = false
 }) {
-  const isTextLeftAligned = textAlign === 'left'
+  const { isMediumScreenWidth } = useViewPort()
+
   const textWidth = `${100 - parseFloat(mediaWidth.replace('%', ''))}%`
+
   const textContent = (
-    <Box position="relative" width={{ xs: '100%', md: '100%', lg: textWidth }}>
+    <Box
+      position="relative"
+      width={{ xs: '100%', md: '100%', lg: textWidth }}
+      flexDirection="column"
+      display="flex"
+    >
       <Box
-        position={{ xs: 'relative', lg: 'absolute' }}
-        ml={!isTextLeftAligned ? 2.5 : 0}
-        mr={isTextLeftAligned ? 2.5 : 0}
+        position={{ md: 'relative', lg: 'absolute' }}
+        ml={alignRight && !isMediumScreenWidth ? 2.5 : 0}
+        mr={!alignRight && !isMediumScreenWidth ? 2.5 : 0}
         display="flex"
         flexDirection="column"
-        alignItems="flex-start"
         textAlign="left"
+        alignItems={{ xs: 'center', lg: 'flex-start' }}
         bottom={0}
+        pb={{ xs: 1.5, lg: 0 }}
       >
         <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }}>
           {headline}
@@ -40,7 +51,7 @@ export default function HorizontalBanner({
   const mediaContent = (
     <Box
       position="relative"
-      width={{ xs: '100%', lg: textWidth }}
+      width={{ xs: '100%', md: '100%', lg: mediaWidth }}
       height="100%"
       borderRadius={4}
     >
@@ -51,30 +62,36 @@ export default function HorizontalBanner({
   return (
     <Box
       position="relative"
-      flexDirection={{ xs: 'column', lg: 'row' }}
+      flexDirection={{ xs: 'column', md: 'column', lg: 'row' }}
       display="flex"
       width="100%"
     >
-      {isTextLeftAligned ? (
+      {isMediumScreenWidth ? (
         <>
-          {textContent}
-          {mediaContent}
+          {textContent} {mediaContent}
         </>
       ) : (
         <>
-          {mediaContent}
-          {textContent}
+          {alignRight ? (
+            <>
+              {mediaContent} {textContent}
+            </>
+          ) : (
+            <>
+              {textContent} {mediaContent}
+            </>
+          )}
         </>
       )}
     </Box>
   )
 }
 
-HorizontalBanner.propTypes = {
+ResponsiveBanner.propTypes = {
   headline: PropTypes.string,
   bodyText: PropTypes.string,
   media: PropTypes.node,
   mediaWidth: PropTypes.string,
-  textAlign: PropTypes.string,
-  display: PropTypes.object
+  alignRight: PropTypes.bool
 }
+export default ResponsiveBanner

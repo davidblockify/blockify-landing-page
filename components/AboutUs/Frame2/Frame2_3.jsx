@@ -1,18 +1,10 @@
-'use client'
-
 import React from 'react'
 
 import Image from 'next/image'
 
-import { styled } from '@mui/material/styles'
-
 import image from '@/public/about-us-2-3.png'
-import HorizontalBanner from '@/components/shared/HorizontalBanner'
-
-const SpanStyled = styled('span')(({ theme }) => ({
-  fontWeight: 'bold',
-  color: theme.palette.primary.main
-}))
+import ResponsiveBanner from '@/components/shared/ResponsiveBanner'
+import CustomSpan from '@/components/shared/CustomSpan'
 
 export default function Frame2_2() {
   const image23 = (
@@ -26,20 +18,19 @@ export default function Frame2_2() {
 
   const headline = (
     <span>
-      <SpanStyled>Value</SpanStyled> Proposition
+      <CustomSpan>Value</CustomSpan> Proposition
     </span>
   )
   const bodyText = (
     <span>
-      At <SpanStyled>Blockify</SpanStyled>, we recognize that each business has
+      At <CustomSpan>Blockify</CustomSpan>, we recognize that each business has
       unique needs. That&apos;s why we offer customized support from the initial
       stages of project planning through to development and execution.
     </span>
   )
   return (
-    <HorizontalBanner
+    <ResponsiveBanner
       mediaWidth="60%"
-      textAlign="left"
       headline={headline}
       bodyText={bodyText}
       media={image23}
