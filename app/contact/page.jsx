@@ -1,3 +1,4 @@
+'use client'
 import ContactForm from '@/components/Contact/ContactForm'
 import ContactFormContainer from '@/components/Contact/ContactFormContainer'
 
