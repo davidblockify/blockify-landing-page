@@ -80,7 +80,7 @@
     "no-console": "error",
     "no-undef": "error",
     "no-unused-vars": "error",
-    "quotes": ["error", "single"],
+    "quotes": ["error", "single", { "avoidEscape": true }],
     "no-alert": "error",
     "import/no-unresolved": 2
   }

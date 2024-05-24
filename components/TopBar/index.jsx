@@ -13,8 +13,7 @@ import LogoBlockify from './LogoBlockify'
 const menuItems = [
   { index: 0, label: 'About Us', href: '/' },
   { index: 1, label: 'Service', href: '/service' },
-  { index: 2, label: 'Blog', href: '/blog' },
-  { index: 3, label: 'Contact', href: '/contact' }
+  { index: 2, label: 'Contact', href: '/contact' }
 ]
 
 function TopBar() {
