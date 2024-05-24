@@ -9,7 +9,6 @@ export default function VerticalBanner({
   headline,
   bodyText,
   media,
-  textAlign = 'left',
   alignItems = 'flex-start'
 }) {
   return (
@@ -19,22 +18,14 @@ export default function VerticalBanner({
       justifyItems="center"
       width="100%"
     >
-      <Box
-        position="relative"
-        sx={{
-          width: '100%',
-          display: 'flex'
-        }}
-      >
+      <Box position="relative" width="100%" display="flex">
         <Box
           position="relative"
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: alignItems,
-            textAlign: textAlign,
-            paddingBottom: 1.5
-          }}
+          display="flex"
+          flexDirection="column"
+          alignItems={alignItems}
+          textAlign="left"
+          pb={1.5}
         >
           <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }}>
             {headline}

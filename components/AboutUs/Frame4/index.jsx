@@ -67,7 +67,6 @@ export default function Frame4() {
           headline={frame4Headline}
           bodyText={frame4BodyText}
           media={Image1}
-          textAlign={{ xs: 'center', md: 'left' }}
           alignItems={{ xs: 'center', md: 'flex-start' }}
         />
       </Box>

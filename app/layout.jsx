@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           <ThemeProvider theme={theme}>
             <TopBar />
             <ViewportBackground>
-              <Box mx="10%" width="80wv">
+              <Box px="10%" width="80wv">
                 {children}
               </Box>
             </ViewportBackground>

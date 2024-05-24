@@ -10,26 +10,21 @@ export default function HorizontalBanner({
   bodyText,
   media,
   mediaWidth = '66%',
-  textAlign = 'left',
-  display = { xs: 'flex', md: 'flex' }
+  textAlign = 'left'
 }) {
   const isTextLeftAligned = textAlign === 'left'
   const textWidth = `${100 - parseFloat(mediaWidth.replace('%', ''))}%`
-
   const textContent = (
-    <Box position="relative" width={textWidth}>
+    <Box position="relative" width={{ xs: '100%', md: '100%', lg: textWidth }}>
       <Box
-        position="absolute"
+        position={{ xs: 'relative', lg: 'absolute' }}
         ml={!isTextLeftAligned ? 2.5 : 0}
         mr={isTextLeftAligned ? 2.5 : 0}
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: textAlign === 'left' ? 'flex-start' : 'flex-end',
-          textAlign: textAlign,
-          bottom: 0,
-          right: 0
-        }}
+        display="flex"
+        flexDirection="column"
+        alignItems="flex-start"
+        textAlign="left"
+        bottom={0}
       >
         <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }}>
           {headline}
@@ -43,13 +38,23 @@ export default function HorizontalBanner({
   )
 
   const mediaContent = (
-    <Box width={mediaWidth} height="100%" borderRadius={4}>
+    <Box
+      position="relative"
+      width={{ xs: '100%', lg: textWidth }}
+      height="100%"
+      borderRadius={4}
+    >
       {media}
     </Box>
   )
 
   return (
-    <Box position="relative" flexDirection="row" display={display} width="100%">
+    <Box
+      position="relative"
+      flexDirection={{ xs: 'column', lg: 'row' }}
+      display="flex"
+      width="100%"
+    >
       {isTextLeftAligned ? (
         <>
           {textContent}
@@ -68,6 +73,8 @@ export default function HorizontalBanner({
 HorizontalBanner.propTypes = {
   headline: PropTypes.string,
   bodyText: PropTypes.string,
+  media: PropTypes.node,
+  mediaWidth: PropTypes.string,
   textAlign: PropTypes.string,
-  alignItems: PropTypes.string
+  display: PropTypes.object
 }

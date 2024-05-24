@@ -9,7 +9,7 @@ import WelcomeText from './WelcomeText'
 export default function Frame1() {
   return (
     <Box
-      py={{ xs: '15vh', md: '0' }}
+      py={{ xs: '10vh', md: '0' }}
       position="static"
       sx={{
         display: 'flex',

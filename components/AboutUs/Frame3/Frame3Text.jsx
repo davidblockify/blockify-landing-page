@@ -9,8 +9,8 @@ const textStyles = {
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'flex-end',
-    textAlign: 'right',
+    alignItems: 'flex-start',
+    textAlign: 'left',
     bottom: 0,
     right: 0
   },

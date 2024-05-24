@@ -28,7 +28,7 @@ function TopBar() {
         height: { xs: '4rem', md: '5.5rem' }
       }}
     >
-      <Container maxWidth="xl" className="h-full ">
+      <Container maxWidth="xl" className="h-full">
         <Toolbar
           disableGutters
           sx={{
