@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 .class {
   font-family: var(--font-nunito);
 }
@@ -41,8 +39,6 @@
     opacity: 1;
     transform: scale(1);
   }
-}
-@media (max-width: 640px) {
 }
 
 .green-filter {

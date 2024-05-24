@@ -23,6 +23,7 @@ function CustomLink({
           transition: 'background-color 0.3s',
           borderRadius: '4px'
         }}
+        fontWeight={600}
       >
         {children}
       </Typography>
