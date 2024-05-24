@@ -25,7 +25,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${nunitoSans.variable}`}>
+      <body
+        className={`${inter.variable} ${nunitoSans.variable}`}
+        suppressHydrationWarning
+      >
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <TopBar />
