@@ -10,8 +10,8 @@ import ContactBanner from '@/public/contact-banner.png'
 export default function ViewportBackground({ children }) {
   const pathname = usePathname()
   const isHome = pathname === '/'
-  const isServicePage = pathname === '/service'
-  const isContactPage = pathname === '/contact'
+  const isServicePage = pathname === '/service/'
+  const isContactPage = pathname === '/contact/'
 
   return (
     <div
