@@ -77,7 +77,7 @@
         "newlines-between": "always"
       }
     ],
-    "no-console": "error",
+    "no-console": "warn",
     "no-undef": "error",
     "no-unused-vars": "error",
     "quotes": ["error", "single", { "avoidEscape": true }],
