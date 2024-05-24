@@ -3,23 +3,18 @@ import React from 'react'
 import Image from 'next/image'
 
 import Box from '@mui/material/Box'
-import { styled } from '@mui/material/styles'
 
 import VerticalBanner from '@/components/shared/VerticalBanner'
 import image1 from '@/public/about-us-4-1.png'
 import image2 from '@/public/about-us-4-2.png'
 import image3 from '@/public/about-us-4-3.png'
-
-const SpanStyled = styled('span')(({ theme }) => ({
-  fontWeight: 'bold',
-  color: theme.palette.primary.main
-}))
+import CustomSpan from '@/components/shared/CustomSpan'
 
 export default function Frame4() {
   const frame4Headline = (
     <>
-      <SpanStyled>Engagement</SpanStyled>
-      <span> and</span> <SpanStyled>Vision</SpanStyled>
+      <CustomSpan>Engagement</CustomSpan>
+      <span> and</span> <CustomSpan>Vision</CustomSpan>
     </>
   )
   const frame4BodyText = (
@@ -66,7 +61,6 @@ export default function Frame4() {
           headline={frame4Headline}
           bodyText={frame4BodyText}
           media={Image1}
-          textAlign={{ xs: 'center', md: 'left' }}
           alignItems={{ xs: 'center', md: 'flex-start' }}
         />
       </Box>

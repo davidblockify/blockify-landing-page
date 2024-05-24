@@ -28,7 +28,7 @@ function TopBar() {
         zIndex: 9999
       }}
     >
-      <Container maxWidth="xl" className="h-full ">
+      <Container maxWidth="xl" className="h-full">
         <Toolbar
           disableGutters
           sx={{
