@@ -10,8 +10,8 @@ import { styled } from '@mui/material/styles'
 
 import { nunitoSans } from '@/ui/fonts'
 
-const StyledTypograpghy = styled(Typography)(({ isActive }) => ({
-  color: isActive ? 'black' : '',
+const StyledTypograpghy = styled(Typography)(({ color }) => ({
+  color,
   fontFamily: `var(--${nunitoSans.variable})`,
   fontWeight: 'semibold',
   textTransform: 'none',
@@ -35,7 +35,9 @@ export default function DesktopMenu({ menuItems }) {
           return (
             <Button key={menuItem.index}>
               <Link href={menuItem.href}>
-                <StyledTypograpghy isActive={pathname === menuItem.href}>
+                <StyledTypograpghy
+                  color={pathname === menuItem.href ? 'black' : ''}
+                >
                   {menuItem.label}
                 </StyledTypograpghy>
               </Link>
