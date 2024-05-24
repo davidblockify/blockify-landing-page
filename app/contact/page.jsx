@@ -1,5 +1,7 @@
 'use client'
 
+import { useEffect } from 'react'
+
 import { usePathname, useRouter } from 'next/navigation'
 
 import ContactForm from '@/components/Contact/ContactForm'
@@ -7,18 +9,27 @@ import ContactFormContainer from '@/components/Contact/ContactFormContainer'
 
 export default function ContactPage() {
   const router = useRouter()
-  const pathname = usePathname()
+  const path = usePathname()
 
-  // Use a regular expression to extract the path after `#!` if it exists
-  const path = (/#!(\/.*)$/.exec(usePathname) || [])[1]
-  console.log(path)
-  console.log(pathname)
+  useEffect(() => {
+    // Only run this effect client-side
+    if (typeof window !== 'undefined') {
+      // Get the full URL hash including the `#!` if it exists
+      const hash = window.location.hash
+      console.log(hash)
 
-  // If the path was successfully extracted, navigate to that path
-  if (path) {
-    console.log(path)
-    router.replace(path)
-  }
+      // Extract the path after `#!` if it exists
+      const isRefresh = hash.startsWith('#!') ? true : false
+      console.log('isRefesh', isRefresh)
+      console.log('path', path)
+
+      // If the path was successfully extracted, navigate to that path
+      if (isRefresh) {
+        router.replace(path)
+      }
+    }
+  }, [router])
+
   return (
     <>
       <ContactFormContainer title="Contact us">
