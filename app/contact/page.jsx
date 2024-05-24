@@ -1,7 +1,5 @@
 'use client'
 
-import { useEffect } from 'react'
-
 import { useRouter } from 'next/navigation'
 
 import ContactForm from '@/components/Contact/ContactForm'
@@ -10,18 +8,16 @@ import ContactFormContainer from '@/components/Contact/ContactFormContainer'
 export default function ContactPage() {
   const router = useRouter()
 
-  useEffect(() => {
-    // Get the `asPath` property from the router, which represents the path shown in the browser
-    const routingPath = router.asPath
+  const routingPath = router.asPath
 
-    // Use a regular expression to extract the path after `#!` if it exists
-    const path = (/#!(\/.*)$/.exec(routingPath) || [])[1]
+  // Use a regular expression to extract the path after `#!` if it exists
+  const path = (/#!(\/.*)$/.exec(routingPath) || [])[1]
 
-    // If the path was successfully extracted, navigate to that path
-    if (path) {
-      router.replace(path)
-    }
-  }, [router])
+  // If the path was successfully extracted, navigate to that path
+  if (path) {
+    console.log(path)
+    router.replace(path)
+  }
   return (
     <>
       <ContactFormContainer title="Contact us">
