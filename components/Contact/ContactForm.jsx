@@ -6,7 +6,6 @@ import { useForm, Controller } from 'react-hook-form'
 import emailjs from '@emailjs/browser'
 import { matchIsValidTel, MuiTelInput } from 'mui-tel-input'
 import Image from 'next/image'
-import { toast } from 'react-toastify'
 
 import {
   Box,
@@ -129,11 +128,11 @@ const ContactForm = () => {
       .then(
         () => {
           console.log('SUCCESS!')
-          toast.success('Thanks for submit your request!')
+          // toast.success('Thanks for submit your request!')
         },
         (error) => {
           console.log('FAILED...', error)
-          toast.error('Oops something went wrong!')
+          // toast.error('Oops something went wrong!')
         }
       )
   }
