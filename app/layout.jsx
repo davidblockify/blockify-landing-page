@@ -1,8 +1,10 @@
+import { Box } from '@mui/material'
+
 import { Providers } from './context/provider'
 
 import TopBar from '@/components/TopBar'
-import BackgroundVideo from '@/components/BackgroundVideo'
 import { inter, nunitoSans } from '@/ui/fonts'
+import ViewportBackground from '@/components/ViewportBackground'
 
 import './globals.css'
 
@@ -17,8 +19,11 @@ export default function RootLayout({ children }) {
       <body className={`${inter.variable} ${nunitoSans.variable}`}>
         <Providers>
           <TopBar />
-          <main>{children}</main>
-          <BackgroundVideo />
+          <ViewportBackground>
+            <Box mx="10%" width="80wv">
+              {children}
+            </Box>
+          </ViewportBackground>
         </Providers>
       </body>
     </html>

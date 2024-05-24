@@ -1,9 +1,12 @@
 import ContactForm from '@/components/Contact/ContactForm'
+import ContactFormContainer from '@/components/Contact/ContactFormContainer'
 
 export default function ContactPage() {
   return (
-    <div className="w-screen h-screen flex justify-center items-center ">
-      <ContactForm />
-    </div>
+    <>
+      <ContactFormContainer title="Contact us">
+        <ContactForm />
+      </ContactFormContainer>
+    </>
   )
 }
