@@ -12,6 +12,7 @@
     "!.next"
   ],
   "dependencies": {
+    "@aws-amplify/adapter-nextjs": "^1.2.1",
     "@babel/core": "^7.24.5",
     "@babel/eslint-parser": "^7.24.5",
     "@emailjs/browser": "^4.3.3",
@@ -23,6 +24,7 @@
     "@mui/material": "^5.15.17",
     "@mui/material-nextjs": "^5.15.11",
     "@stylistic/eslint-plugin-js": "^2.1.0",
+    "aws-amplify": "^6.3.4",
     "babel-eslint": "^10.1.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-alias": "^1.1.2",
