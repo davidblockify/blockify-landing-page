@@ -7,11 +7,11 @@ export default function Card({ imgSrc, title, description, size }) {
     <CardContent className="bg-white flex flex-col items-center">
       {imgSrc && (
         <Image
+          loading="lazy"
           src={imgSrc}
           width={size}
-          height={size}
+          height="auto"
           alt={title}
-          loading="lazy"
         />
       )}
       <Typography

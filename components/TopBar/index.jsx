@@ -24,7 +24,8 @@ function TopBar() {
       sx={{
         color: 'white',
         background: 'white',
-        height: { xs: '4rem', md: '5.5rem' }
+        height: { xs: '4rem', md: '5.5rem' },
+        zIndex: 9999
       }}
     >
       <Container maxWidth="xl" className="h-full">

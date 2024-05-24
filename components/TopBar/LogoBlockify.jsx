@@ -15,7 +15,7 @@ export default function LogoBlockify({ displaySettings }) {
   return (
     <>
       <Box sx={{ display: displaySettings, mr: '0.5em' }}>
-        <Image width={logoSize} height={logoSize} src={Logo} alt="Brand Logo" />
+        <Image width={logoSize} height="auto" src={Logo} alt="Brand Logo" />
       </Box>
 
       <Typography
