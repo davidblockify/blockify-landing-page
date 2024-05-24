@@ -24,7 +24,7 @@ export default function DesktopMenu({ menuItems }) {
     <Box
       sx={{
         flexGrow: 1,
-        display: { xs: 'none', md: 'flex' },
+        display: { xs: 'none', sm: 'flex' },
         justifyContent: 'end'
       }}
     >
@@ -34,7 +34,12 @@ export default function DesktopMenu({ menuItems }) {
             <Button key={menuItem.index}>
               <Link href={menuItem.href}>
                 <StyledTypograpghy
-                  color={pathname === menuItem.href ? 'black' : ''}
+                  color={pathname === menuItem.href ? '' : 'black'}
+                  sx={{
+                    '&:hover': {
+                      color: '#1ED760'
+                    }
+                  }}
                 >
                   {menuItem.label}
                 </StyledTypograpghy>
