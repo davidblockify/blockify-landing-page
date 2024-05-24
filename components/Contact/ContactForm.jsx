@@ -4,8 +4,9 @@ import { useRef, useState } from 'react'
 
 import { useForm, Controller } from 'react-hook-form'
 import emailjs from '@emailjs/browser'
-import { useSnackbar } from 'notistack'
 import { matchIsValidTel, MuiTelInput } from 'mui-tel-input'
+import Image from 'next/image'
+import { toast } from 'react-toastify'
 
 import {
   Box,
@@ -21,7 +22,7 @@ import {
 } from '@mui/material'
 import { alpha, styled } from '@mui/material/styles'
 
-import { paperPLaneIcon } from '@/shared/constants'
+import PaperPlaneIcon from '@/public/icons/paper-plane-icon.svg'
 
 const BootstrapInput = styled(InputBase)(({ theme }) => ({
   'label + &': {
@@ -33,7 +34,6 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
     border: '1px solid',
     borderColor: '#E0E3E7',
     padding: '10px 12px',
-    fontSize: 20,
     transition: theme.transitions.create([
       'border-color',
       'background-color',
@@ -57,7 +57,6 @@ const BootstrapPhoneInput = styled(MuiTelInput)(({ theme }) => ({
     border: '1px solid',
     borderColor: '#E0E3E7',
     padding: '10px 12px',
-    fontSize: 20,
     transition: theme.transitions.create([
       'border-color',
       'background-color',
@@ -72,7 +71,6 @@ const BootstrapPhoneInput = styled(MuiTelInput)(({ theme }) => ({
 }))
 
 const BootstrapTextArea = styled(TextField)(({ theme }) => ({
-  borderColor: '#E0E3E7',
   borderRadius: 4,
   position: 'relative',
   transition: theme.transitions.create([
@@ -105,8 +103,6 @@ const ContactForm = () => {
     }
   })
 
-  const { enqueueSnackbar } = useSnackbar()
-
   const [radioSelected, setRadioSelected] = useState('email')
 
   const handleRadioChange = (event) => {
@@ -133,28 +129,23 @@ const ContactForm = () => {
       .then(
         () => {
           console.log('SUCCESS!')
-          enqueueSnackbar('Thanks for submit your request!', {
-            variant: 'success'
-          })
+          toast.success('Thanks for submit your request!')
         },
         (error) => {
           console.log('FAILED...', error)
-          enqueueSnackbar('Oops something went wrong', {
-            variant: 'error'
-          })
+          toast.error('Oops something went wrong!')
         }
       )
   }
 
   return (
     <div className="w-[85%]  mt-10 mb-10 bg-white flex flex-col  gap-3">
-      <Box className="flex lg:flex-row flex-col lg:items-center lg:gap-14">
+      <Box className="flex lg:flex-row flex-col lg:items-center lg:gap-14 gap-5">
         <Typography
-          variant="p"
+          variant="body1"
           sx={{
             color: '#000000',
             fontFamily: 'var(--font-nunito)',
-            fontSize: '20px',
             lineHeight: '30px',
             letterSpacing: '-1.1%'
           }}
@@ -164,6 +155,11 @@ const ContactForm = () => {
         <RadioGroup
           row
           aria-labelledby="demo-row-radio-buttons-group-label"
+          sx={{
+            '& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root)': {
+              color: 'black'
+            }
+          }}
           name="row-radio-buttons-group"
           className="md:gap-10"
           value={radioSelected}
@@ -179,15 +175,14 @@ const ContactForm = () => {
         ref={form}
         component="form"
         noValidate
-        className="flex lg:flex-row flex-col  gap-3 mt-5"
+        className="flex lg:flex-row flex-col gap-5 md:gap-10 mt-5"
       >
-        <Stack className="lg:w-1/2 justify-between">
+        <Stack className="lg:w-1/2 justify-between gap-5">
           <FormControl variant="standard">
             <Typography
-              variant="p"
+              variant="body1"
               sx={{
                 color: '#9395A2',
-                fontSize: '20px',
                 lineHeight: '30px',
                 letterSpacing: '-1.1%'
               }}
@@ -216,10 +211,9 @@ const ContactForm = () => {
           {radioSelected === 'email' && (
             <FormControl variant="standard">
               <Typography
-                variant="p"
+                variant="body1"
                 sx={{
                   color: '#9395A2',
-                  fontSize: '20px',
                   lineHeight: '30px',
                   letterSpacing: '-1.1%'
                 }}
@@ -257,10 +251,9 @@ const ContactForm = () => {
           {radioSelected === 'phone' && (
             <FormControl variant="standard">
               <Typography
-                variant="p"
+                variant="body1"
                 sx={{
                   color: '#9395A2',
-                  fontSize: '20px',
                   lineHeight: '30px',
                   letterSpacing: '-1.1%'
                 }}
@@ -300,11 +293,10 @@ const ContactForm = () => {
 
         <FormControl variant="standard" className="lg:w-1/2">
           <Typography
-            variant="p"
+            variant="body1"
             sx={{
               color: '#9395A2',
               fontFamily: 'var(--font-nunito)',
-              fontSize: '20px',
               lineHeight: '30px',
               letterSpacing: '-1.1%'
             }}
@@ -317,14 +309,13 @@ const ContactForm = () => {
             render={({ field }) => (
               <BootstrapTextArea
                 {...field}
-                inputProps={{ style: { fontSize: 20 } }} // font size of input text
                 variant="outlined"
                 InputLabelProps={{
                   shrink: true
                 }}
                 id="message"
                 placeholder="Input your notice"
-                rows={7.9}
+                rows={5}
                 multiline
               />
             )}
@@ -332,15 +323,21 @@ const ContactForm = () => {
         </FormControl>
       </Box>
 
-      <Box className="flex flex-row justify-end !mt-5">
+      <Box className="flex flex-row justify-end mt-5">
         <Button
           variant="contained"
-          color="success"
-          className="w-[5rem] "
+          color="primary"
+          className="w-[5rem]"
           onClick={handleSubmit(onSubmit)}
-          endIcon={paperPLaneIcon}
         >
-          Send
+          <span className="text-white normal-case mr-1">Send</span>
+          <Image
+            loading="lazy"
+            src={PaperPlaneIcon}
+            width={20}
+            height="auto"
+            alt="end-icon"
+          />
         </Button>
       </Box>
     </div>

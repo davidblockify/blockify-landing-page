@@ -1,22 +1,25 @@
-import { globalIcon, locationIcon } from '@/shared/constants'
+import Image from 'next/image'
+
+import GlobalIcon from '@/public/icons/global-icon.svg'
+import LocationIcon from '@/public/icons/location-icon.svg'
 
 const { Typography, Stack } = require('@mui/material')
 
 const items = [
   {
-    icon: globalIcon,
+    icon: GlobalIcon,
     content: 'www.blockify.it'
   },
   {
-    icon: locationIcon,
+    icon: LocationIcon,
     content: '46, Ta Hien Street, Thanh My Loi Ward, Thu Duc City, HCMC'
   }
 ]
 
 const renderCompanyInfoList = (items) => {
   return items.map((item, index) => (
-    <div key={index} className="w-full flex flex-row items-center gap-1">
-      <div>{item.icon}</div>
+    <div key={index} className="w-full flex flex-row gap-1 items-start">
+      <Image loading="lazy" src={item.icon} width={20} alt={'title'} />
       <Typography
         sx={{ typography: { xs: 'body1', md: 'h8' }, color: 'white' }}
       >
@@ -29,19 +32,20 @@ const renderCompanyInfoList = (items) => {
 const ContactFormContainer = ({ children, title }) => {
   return (
     <div className="lg:w-3/4 w-full h-full flex flex-col rounded-lg">
-      <div className="w-full lg:h-[8rem] h-[10rem]  bg-app-green flex flex-row  justify-center rounded-lg lg:rounded-br-none lg:rounded-bl-none  drop-shadow-lg">
-        <div className="w-[85%] h-full flex lg:flex-row flex-col lg:items-center justify-center">
+      <div className="w-full lg:h-[8rem] h-[10rem] bg-[#0FCB52] flex flex-row  justify-center rounded-lg lg:rounded-br-none lg:rounded-bl-none  drop-shadow-lg">
+        <div className="w-[85%] h-full flex lg:flex-row flex-col lg:items-center justify-center gap-5">
           <div className="lg:w-[40%] lg:h-3/4">
             <Typography
               variant="h5"
               sx={{
-                typography: { lg: 'h3', md: 'h4' }
+                typography: { lg: 'h3', md: 'h4' },
+                width: 'max-content'
               }}
               color={'white'}
             >
               {title}
+              <hr className="w-[60%] border-white border-2 rounded-sm" />
             </Typography>
-            <hr className="w-44 border-white border-2 rounded-sm" />
           </div>
           <Stack className="lg:h-full" justifyContent="center" gap={1}>
             {renderCompanyInfoList(items)}
