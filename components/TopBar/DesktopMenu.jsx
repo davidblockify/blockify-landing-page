@@ -8,11 +8,9 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 
-import { nunitoSans } from '@/ui/fonts'
-
 const StyledTypograpghy = styled(Typography)(({ color }) => ({
   color,
-  fontFamily: `var(--${nunitoSans.variable})`,
+  fontFamily: 'var(--font-nunito)',
   fontWeight: 'semibold',
   textTransform: 'none',
   fontSize: '1.4em',

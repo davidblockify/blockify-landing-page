@@ -6,7 +6,8 @@ export default function Background({ imgSrc }) {
       style={{
         position: 'relative',
         width: '100%',
-        clipPath: 'inset(0 0 0 0)'
+        clipPath: 'inset(0 0 0 0)',
+        zIndex: '-10'
       }}
     >
       <Image

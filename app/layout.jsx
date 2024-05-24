@@ -5,7 +5,7 @@ import { Box } from '@mui/material'
 import { ThemeProvider } from '@mui/material/styles'
 
 import TopBar from '@/components/TopBar'
-import { inter } from '@/ui/fonts'
+import { inter, nunitoSans } from '@/ui/fonts'
 import theme from '@/theme'
 import ViewportBackground from '@/components/ViewportBackground'
 import './globals.css'
@@ -18,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
+      <body className={`${inter.variable} ${nunitoSans.variable}`}>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <TopBar />
