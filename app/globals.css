@@ -1,9 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-<<<<<<< Updated upstream
-/* @import '~react-toastify/dist/ReactToastify.min.css'; */
-=======
 @import '~react-toastify/dist/ReactToastify.min.css';
 
 .class {
@@ -32,7 +29,6 @@
   background-size: 100% 5px;
   background-position: 0 100%;
 }
->>>>>>> Stashed changes
 
 /* In your global CSS file (e.g., styles.css) */
 @keyframes fadeInScaleUp {
