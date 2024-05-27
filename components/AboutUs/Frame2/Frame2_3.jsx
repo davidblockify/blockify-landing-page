@@ -5,11 +5,16 @@ import Image from 'next/image'
 import image from '@/public/about-us-2-3.png'
 import ResponsiveBanner from '@/components/shared/ResponsiveBanner'
 import CustomSpan from '@/components/shared/CustomSpan'
+import { useAboutUsAnimations } from '@/hooks/useAboutUsAnimations'
 
 export default function Frame2_2() {
+  const { banner3 } = useAboutUsAnimations()
+
   const image23 = (
     <Image
+      ref={banner3}
       src={image}
+      loading="lazy"
       alt="image-2-3"
       sizes="100vw"
       style={{ width: '100%', height: 'auto' }}
@@ -30,6 +35,7 @@ export default function Frame2_2() {
   )
   return (
     <ResponsiveBanner
+      id="card3"
       mediaWidth="60%"
       headline={headline}
       bodyText={bodyText}
