@@ -55,6 +55,7 @@ function ResponsiveBanner({
       width={{ xs: '100%', md: '100%', lg: mediaWidth }}
       height="100%"
       borderRadius={4}
+      overflow="hidden"
     >
       {media}
     </Box>
