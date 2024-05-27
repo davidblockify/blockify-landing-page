@@ -32,7 +32,7 @@ const renderCompanyInfoList = (items) => {
 const ContactFormContainer = ({ children, title }) => {
   return (
     <div className="lg:w-3/4 w-full h-full flex flex-col rounded-lg">
-      <div className="w-full lg:h-[8rem] h-[10rem] bg-[#0FCB52] flex flex-row  justify-center rounded-lg lg:rounded-br-none lg:rounded-bl-none  drop-shadow-lg">
+      <div className="w-full lg:h-[8rem] h-[10rem] bg-[#0FCB52] flex flex-row justify-center rounded-lg md:rounded-br-none md:rounded-bl-none drop-shadow-lg">
         <div className="w-[85%] h-full flex lg:flex-row flex-col lg:items-center justify-center gap-5">
           <div className="lg:w-[40%] lg:h-3/4">
             <Typography
@@ -52,7 +52,7 @@ const ContactFormContainer = ({ children, title }) => {
           </Stack>
         </div>
       </div>
-      <div className="w-full flex flex-row justify-center bg-white lg:drop-shadow-lg">
+      <div className="w-full flex flex-row justify-center bg-white md:drop-shadow-lg">
         {children}
       </div>
     </div>

@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 
-import { Grid } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 
 import Card from '@/components/Card'
 import ServiceImage1 from '@/public/service-1.svg'
@@ -59,7 +59,7 @@ function ServicePage() {
   ]
 
   return (
-    <div className="mt-20">
+    <Box pt={15} pb={10}>
       <HeadingText
         isUnderLine
         title={
@@ -82,7 +82,7 @@ function ServicePage() {
           </Grid>
         ))}
       </Grid>
-    </div>
+    </Box>
   )
 }
 
