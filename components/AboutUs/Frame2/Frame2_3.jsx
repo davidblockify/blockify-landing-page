@@ -36,7 +36,7 @@ export default function Frame2_2() {
   return (
     <ResponsiveBanner
       id="card3"
-      mediaWidth="60%"
+      mediaWidth={60}
       headline={headline}
       bodyText={bodyText}
       media={image23}
