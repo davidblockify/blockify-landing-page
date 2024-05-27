@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
-import { CardContent, Typography } from '@mui/material'
+import Typography from '@mui/material/Typography'
+import CardContent from '@mui/material/CardContent'
 
 export default function Card({ imgSrc, title, description, size }) {
   return (

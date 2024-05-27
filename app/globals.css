@@ -1,33 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.class {
-  font-family: var(--font-nunito);
-}
-.link {
-  padding-bottom: 0.7rem;
-}
-
-.link-underline {
-  border-bottom-width: 0;
-  background-image: linear-gradient(transparent, transparent),
-    linear-gradient(#fff, #fff);
-  background-size: 0 5px;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size 0.5s ease-in-out;
-}
-
-.link-underline-black {
-  background-image: linear-gradient(transparent, transparent),
-    linear-gradient(#481c6a, #481c6a);
-}
-
-.link-underline:hover {
-  background-size: 100% 5px;
-  background-position: 0 100%;
-}
+/* @import '~react-toastify/dist/ReactToastify.min.css'; */
 
 /* In your global CSS file (e.g., styles.css) */
 @keyframes fadeInScaleUp {
@@ -39,9 +13,4 @@
     opacity: 1;
     transform: scale(1);
   }
-}
-
-.green-filter {
-  filter: hue-rotate(-60deg) blur(0.75px) saturate(110%) brightness(100%)
-    contrast(100%) sepia(0%);
 }
