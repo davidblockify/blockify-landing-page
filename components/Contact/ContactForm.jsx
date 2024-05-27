@@ -20,6 +20,7 @@ import {
   Typography
 } from '@mui/material'
 import { alpha, styled } from '@mui/material/styles'
+import RotateRightIcon from '@mui/icons-material/RotateRight'
 
 import PaperPlaneIcon from '@/public/icons/paper-plane-icon.svg'
 
@@ -88,6 +89,8 @@ const BootstrapTextArea = styled(TextField)(({ theme }) => ({
 }))
 
 const ContactForm = () => {
+  const [isLoading, setIsLoading] = useState(false)
+
   const form = useRef()
   const {
     control,
@@ -109,12 +112,12 @@ const ContactForm = () => {
   }
 
   const onSubmit = (data) => {
+    setIsLoading(true)
     const payload = {
       name: data.name,
       message: data.message,
       [radioSelected]: data[radioSelected]
     }
-    console.log(payload)
 
     emailjs
       .send(
@@ -129,10 +132,12 @@ const ContactForm = () => {
         () => {
           console.log('SUCCESS!')
           toast.success('Thanks for submit your request!')
+          setIsLoading(false)
         },
         (error) => {
           console.log('FAILED...', error)
           toast.error('Oops something went wrong!')
+          setIsLoading(false)
         }
       )
   }
@@ -327,16 +332,22 @@ const ContactForm = () => {
           variant="contained"
           color="primary"
           className="w-[5rem]"
+          disabled={isLoading}
           onClick={handleSubmit(onSubmit)}
         >
           <span className="text-white normal-case mr-1">Send</span>
-          <Image
-            loading="lazy"
-            src={PaperPlaneIcon}
-            width={20}
-            height="auto"
-            alt="end-icon"
-          />
+
+          {isLoading ? (
+            <RotateRightIcon className="animate-spin" />
+          ) : (
+            <Image
+              loading="lazy"
+              src={PaperPlaneIcon}
+              width={20}
+              height="auto"
+              alt="end-icon"
+            />
+          )}
         </Button>
       </Box>
     </div>
