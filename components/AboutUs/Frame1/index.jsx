@@ -21,6 +21,7 @@ export default function Frame1() {
     >
       <Box>
         <Image
+          loading="lazy"
           id="logo"
           src="/logo-blured.png"
           width={555}

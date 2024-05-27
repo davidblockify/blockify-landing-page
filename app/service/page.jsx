@@ -1,7 +1,8 @@
 'use client'
 import React from 'react'
 
-import { Box, Grid } from '@mui/material'
+import Grid from '@mui/material/Grid'
+import Box from '@mui/material/Box'
 
 import Card from '@/components/Card'
 import ServiceImage1 from '@/public/service-1.svg'

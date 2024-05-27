@@ -7,7 +7,7 @@ import MenuItem from '@mui/material/MenuItem'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded'
-import { Drawer } from '@mui/material'
+import Drawer from '@mui/material/Drawer'
 
 import CustomLink from '../shared/CustomLink'
 
