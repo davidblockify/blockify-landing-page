@@ -8,6 +8,7 @@ import Box from '@mui/material/Box'
 import useViewPort from '@/hooks/useViewPort'
 
 function ResponsiveBanner({
+  id,
   headline,
   bodyText,
   media,
@@ -20,6 +21,7 @@ function ResponsiveBanner({
 
   const textContent = (
     <Box
+      id={id}
       position="relative"
       width={{ xs: '100%', md: '100%', lg: textWidth }}
       flexDirection="column"

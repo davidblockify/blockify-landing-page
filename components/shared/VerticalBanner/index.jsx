@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 
 export default function VerticalBanner({
+  id,
   headline,
   bodyText,
   media,
@@ -13,6 +14,7 @@ export default function VerticalBanner({
 }) {
   return (
     <Box
+      id={id}
       position="relative"
       flexDirection="column"
       justifyItems="center"
