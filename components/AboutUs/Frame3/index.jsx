@@ -35,13 +35,15 @@ export default function Frame3() {
       <CustomSpan>Web 3.0</CustomSpan>
     </span>
   )
+
   return (
     <ResponsiveBanner
       id="card4"
       headline={headline}
       bodyText={bodyText}
       media={frame3Image}
-      alignRight
+      align="right"
+      mediaWidth={60}
     />
   )
 }

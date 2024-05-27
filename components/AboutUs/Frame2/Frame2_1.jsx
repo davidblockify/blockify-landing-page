@@ -35,7 +35,7 @@ export default function Frame2_1() {
       headline={headline}
       bodyText={bodyText}
       media={image21}
-      mediaWidth="60%"
+      mediaWidth={60}
     />
   )
 }

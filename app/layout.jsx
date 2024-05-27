@@ -12,7 +12,7 @@ import theme from '@/theme'
 import ViewportBackground from '@/components/ViewportBackground'
 
 import './globals.css'
-import 'react-toastify/dist/ReactToastify.css'
+import 'react-toastify/ReactToastify.min.css'
 
 export const metadata = {
   title: 'Blockify',
