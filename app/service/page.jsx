@@ -64,7 +64,7 @@ function ServicePage() {
       <HeadingText
         isUnderLine
         title={
-          <span>
+          <span className="font-bold">
             Our
             <span className="text-app-green ml-4">service</span>
           </span>

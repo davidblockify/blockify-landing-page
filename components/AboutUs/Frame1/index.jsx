@@ -9,9 +9,10 @@ import WelcomeText from './WelcomeText'
 export default function Frame1() {
   return (
     <Box
-      pt={{ xs: '10vh', md: '5vh' }}
-      position="static"
+      pt="5vh"
+      position="absolute"
       sx={{
+        top: '10px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -19,17 +20,20 @@ export default function Frame1() {
         height: '100vh'
       }}
     >
-      <Box>
+      <Box
+        sx={{
+          width: { md: '427px', xs: '285px' },
+          height: { md: '400px', xs: '267px' },
+          position: 'relative'
+        }}
+      >
         <Image
-          loading="lazy"
-          id="logo"
           src="/logo-blured.png"
-          width={555}
-          height={555}
           alt="logo"
+          layout="fill"
+          objectFit="cover"
         />
       </Box>
-
       <WelcomeText />
     </Box>
   )
