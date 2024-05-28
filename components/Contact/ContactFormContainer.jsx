@@ -1,9 +1,10 @@
 import Image from 'next/image'
 
-import GlobalIcon from '@/public/icons/global-icon.svg'
-import LocationIcon from '@/public/icons/location-icon.svg'
+import Typography from '@mui/material/Typography'
+import Stack from '@mui/material/Stack'
 
-const { Typography, Stack } = require('@mui/material')
+import LocationIcon from '@/public/icons/location-icon.svg'
+import GlobalIcon from '@/public/icons/global-icon.svg'
 
 const items = [
   {
@@ -19,10 +20,8 @@ const items = [
 const renderCompanyInfoList = (items) => {
   return items.map((item, index) => (
     <div key={index} className="w-full flex flex-row gap-1 items-start">
-      <Image loading="lazy" src={item.icon} width={20} alt={'title'} />
-      <Typography
-        sx={{ typography: { xs: 'body1', md: 'h8' }, color: 'white' }}
-      >
+      <Image loading="lazy" src={item.icon} width={20} alt="title" />
+      <Typography color="white" variant="body1">
         {item.content}
       </Typography>
     </div>
@@ -31,26 +30,30 @@ const renderCompanyInfoList = (items) => {
 
 const ContactFormContainer = ({ children, title }) => {
   return (
-    <div className="lg:w-3/4 w-full h-full flex flex-col rounded-lg mb-5">
+    <div className="lg:w-4/5 w-full h-full flex flex-col rounded-lg mb-5">
       <div className="w-full lg:h-[8rem] h-[10rem] bg-[#0FCB52] flex flex-row justify-center rounded-lg md:rounded-br-none md:rounded-bl-none drop-shadow-lg">
-        <div className="w-[85%] h-full flex lg:flex-row flex-col lg:items-center justify-center gap-5">
-          <div className="lg:w-[40%] lg:h-3/4">
-            <Typography
-              color="white"
-              sx={{
-                typography: { md: 'h3', lg: 'h3' },
-                width: 'max-content'
-              }}
-            >
-              {title}
+        <div className="w-[88%] h-full flex lg:flex-row flex-col lg:items-center lg:justify-between sm:justify-center gap-5">
+          <div className="lg:w-[40%]">
+            <div className="max-w-max">
+              <Typography
+                color="white"
+                sx={{
+                  typography: { xs: 'h6', md: 'h3' }
+                }}
+              >
+                {title}
+              </Typography>
+
               <hr className="w-[60%] border-white border-2 rounded-sm" />
-            </Typography>
+            </div>
           </div>
-          <Stack className="lg:h-full" justifyContent="center" gap={1}>
+
+          <Stack className="lg:h-full" justifyContent="center">
             {renderCompanyInfoList(items)}
           </Stack>
         </div>
       </div>
+
       <div className="w-full flex flex-row justify-center bg-white md:drop-shadow-lg rounded-lg xs:rounded-br-none xs:rounded-bl-none">
         {children}
       </div>
