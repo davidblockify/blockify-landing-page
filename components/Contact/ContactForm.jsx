@@ -138,7 +138,7 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="w-[85%] mt-10 mb-10 flex flex-col gap-3">
+    <div className="w-[88%] mt-10 mb-10 flex flex-col gap-3">
       <Box className="flex lg:flex-row flex-col lg:items-center lg:gap-14 gap-5">
         <Typography
           variant="body1"
@@ -199,11 +199,6 @@ const ContactForm = () => {
                 />
               )}
             />
-            {errors.name && (
-              <p className="text-app-green font-medium">
-                This field is required!
-              </p>
-            )}
             <p
               className={`text-app-green font-medium ${errors.name ? 'visible' : 'invisible'}`}
             >
