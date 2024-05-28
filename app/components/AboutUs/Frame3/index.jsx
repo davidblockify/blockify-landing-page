@@ -3,9 +3,9 @@ import React from 'react'
 import Image from 'next/image'
 
 import image from '@/public/about-us-3-1.png'
-import ResponsiveBanner from '@/components/shared/ResponsiveBanner'
-import CustomSpan from '@/components/shared/CustomSpan'
-import { useAboutUsAnimations } from '@/hooks/useAboutUsAnimations'
+import ResponsiveBanner from '@/app/components/shared/ResponsiveBanner'
+import CustomSpan from '@/app/components/shared/CustomSpan'
+import { useAboutUsAnimations } from '@/app/hooks/useAboutUsAnimations'
 
 export default function Frame3() {
   const { banner4 } = useAboutUsAnimations()

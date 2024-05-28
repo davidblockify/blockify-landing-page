@@ -1,6 +1,6 @@
 'use client'
-import ContactForm from '@/components/Contact/ContactForm'
-import ContactFormContainer from '@/components/Contact/ContactFormContainer'
+import ContactForm from '@/app/components/Contact/ContactForm'
+import ContactFormContainer from '@/app/components/Contact/ContactFormContainer'
 
 export default function ContactPage() {
   return (
