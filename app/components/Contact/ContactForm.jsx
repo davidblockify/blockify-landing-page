@@ -109,6 +109,7 @@ const ContactForm = () => {
   const onSubmit = (data) => {
     setIsLoading(true)
     const payload = {
+      from_name: data.name,
       name: data.name,
       message: data.message,
       [radioSelected]: data[radioSelected]
