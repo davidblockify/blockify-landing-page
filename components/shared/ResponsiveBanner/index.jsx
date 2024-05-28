@@ -12,30 +12,48 @@ function ResponsiveBanner({
   headline,
   bodyText,
   media,
-  mediaWidth = '66%',
-  alignRight = false
+  mediaWidth = 66,
+  align = 'left'
 }) {
   const { isMediumScreenWidth } = useViewPort()
 
-  const textWidth = `${100 - parseFloat(mediaWidth.replace('%', ''))}%`
+  const textWidth = ['left', 'right'].includes(align)
+    ? `${100 - mediaWidth}%`
+    : '100%'
+
+  const spacing = (type) =>
+    align.includes(type) && !isMediumScreenWidth ? 2.5 : 0
+
+  const direction = () =>
+    ({
+      right: isMediumScreenWidth ? 'column' : 'row-reverse',
+      left: 'row'
+    })[align] || 'column'
 
   const textContent = (
     <Box
       id={id}
       position="relative"
-      width={{ xs: '100%', md: '100%', lg: textWidth }}
+      width={{
+        xs: '100%',
+        md: '100%',
+        lg: textWidth
+      }}
       flexDirection="column"
       display="flex"
+      justifyContent="end"
     >
       <Box
-        position={{ md: 'relative', lg: 'absolute' }}
-        ml={alignRight && !isMediumScreenWidth ? 2.5 : 0}
-        mr={!alignRight && !isMediumScreenWidth ? 2.5 : 0}
+        position={{
+          md: 'relative',
+          lg: ['left', 'right'].includes(align) ? 'absolute' : 'relative'
+        }}
+        ml={spacing('right')}
+        mr={spacing('left')}
         display="flex"
         flexDirection="column"
         textAlign="left"
         alignItems={{ xs: 'center', lg: 'flex-start' }}
-        bottom={0}
         pb={{ xs: 1.5, lg: 0 }}
       >
         <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }}>
@@ -52,7 +70,7 @@ function ResponsiveBanner({
   const mediaContent = (
     <Box
       position="relative"
-      width={{ xs: '100%', md: '100%', lg: mediaWidth }}
+      width={{ xs: '100%', md: '100%', lg: `${mediaWidth}%` }}
       height="100%"
       borderRadius={4}
       overflow="hidden"
@@ -67,7 +85,7 @@ function ResponsiveBanner({
       flexDirection={{
         xs: 'column',
         md: 'column',
-        lg: alignRight && !isMediumScreenWidth ? 'row-reverse' : 'row'
+        lg: direction()
       }}
       display="flex"
       width="100%"

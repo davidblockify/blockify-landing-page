@@ -179,7 +179,7 @@ const ContactForm = () => {
         noValidate
         className="flex lg:flex-row flex-col gap-5 md:gap-10 mt-5"
       >
-        <Stack className="lg:w-1/2 justify-between gap-5">
+        <Stack className="lg:w-1/2 justify-between gap-1">
           <FormControl variant="standard">
             <Typography
               variant="body1"
@@ -203,11 +203,11 @@ const ContactForm = () => {
                 />
               )}
             />
-            {errors.name && (
-              <p className="text-app-green font-nunito font-medium">
-                This field is required!
-              </p>
-            )}
+            <p
+              className={`text-app-green font-nunito font-medium ${errors.name ? 'visible' : 'invisible'}`}
+            >
+              This field is required!
+            </p>
           </FormControl>
 
           {radioSelected === 'email' && (
@@ -237,16 +237,13 @@ const ContactForm = () => {
                   />
                 )}
               />
-              {errors?.email?.type === 'required' && (
-                <p className="text-app-green font-nunito font-medium">
-                  This field is required!
-                </p>
-              )}
-              {errors?.email?.type === 'pattern' && (
-                <p className="text-app-green font-nunito font-medium">
-                  Wrong email format!
-                </p>
-              )}
+              <p
+                className={`text-app-green font-nunito font-medium ${['required', 'pattern'].includes(errors?.email?.type) ? 'visible' : 'invisible'}`}
+              >
+                {errors?.email?.type === 'required'
+                  ? 'This field is required!'
+                  : 'Wrong email format!'}
+              </p>
             </FormControl>
           )}
 
