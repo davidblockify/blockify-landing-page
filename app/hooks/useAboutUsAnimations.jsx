@@ -18,15 +18,17 @@ export const useAboutUsAnimations = () => {
           y: type === 'top' ? 500 : -500
         }
 
-    gsap.from(ref.current, {
-      scrollTrigger: {
-        trigger: triggerId,
-        start: 'top bottom',
-        end: '100% 70%',
-        scrub: 0.5
-      },
-      ...direction
-    })
+    if (ref.current) {
+      gsap.from(ref.current, {
+        scrollTrigger: {
+          trigger: triggerId,
+          start: 'top bottom',
+          end: '100% 70%',
+          scrub: 0.5
+        },
+        ...direction
+      })
+    }
   }
 
   const banner1 = useRef()
