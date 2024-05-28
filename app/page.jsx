@@ -11,10 +11,14 @@ import Frame3 from '@/components/AboutUs/Frame3'
 import Frame4 from '@/components/AboutUs/Frame4'
 
 export default function Home() {
-  const frames = [Frame1, Frame2_1, Frame2_2, Frame2_3, Frame3, Frame4]
+  const frames = [Frame2_1, Frame2_2, Frame2_3, Frame3, Frame4]
 
   return (
     <Box pb="15%">
+      <Box mb={{ xs: 8.5, md: 12.5 }}>
+        <Frame1 />
+      </Box>
+
       {frames.map((Frame, index) => (
         <Box key={index} mb={{ xs: 4, md: 15 }}>
           <Frame />

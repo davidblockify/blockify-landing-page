@@ -24,9 +24,9 @@ export default function Frame2_1() {
   const headline = <CustomSpan>Introduction</CustomSpan>
   const bodyText = (
     <span>
-      <CustomSpan>Blockify</CustomSpan> is pioneering the future of digital
-      innovation with cutting-edge blockchain solutions tailored for the Web 3.0
-      era.
+      <CustomSpan fontSize="1.2em">Blockify</CustomSpan> is pioneering the
+      future of digital innovation with cutting-edge blockchain solutions
+      tailored for the Web 3.0 era.
     </span>
   )
   return (

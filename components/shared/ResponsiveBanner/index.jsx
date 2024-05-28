@@ -21,9 +21,12 @@ function ResponsiveBanner({
     ? `${100 - mediaWidth}%`
     : '100%'
 
-  const spacing = (type) =>
-    align.includes(type) && !isMediumScreenWidth ? 2.5 : 0
-
+  const spacing = (type) => {
+    if (align.includes(type) && !isMediumScreenWidth) {
+      return type === 'left' ? 12.25 : 2.5
+    }
+    return 0
+  }
   const direction = () =>
     ({
       right: isMediumScreenWidth ? 'column' : 'row-reverse',
@@ -41,7 +44,7 @@ function ResponsiveBanner({
       }}
       flexDirection="column"
       display="flex"
-      justifyContent="end"
+      justifyContent="flex-end"
     >
       <Box
         position={{
@@ -56,11 +59,19 @@ function ResponsiveBanner({
         alignItems={{ xs: 'center', lg: 'flex-start' }}
         pb={{ xs: 1.5, lg: 0 }}
       >
-        <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }}>
+        <Typography
+          pb={{ xs: 2, md: 3 }}
+          sx={{
+            typography: { xs: 'h5', md: 'h3' }
+          }}
+        >
           {headline}
         </Typography>
-        <br />
-        <Typography sx={{ typography: { xs: 'body1', md: 'h6' } }}>
+        <Typography
+          sx={{
+            typography: { xs: 'body1', md: 'h6' }
+          }}
+        >
           {bodyText}
         </Typography>
       </Box>
@@ -97,10 +108,11 @@ function ResponsiveBanner({
 }
 
 ResponsiveBanner.propTypes = {
-  headline: PropTypes.string,
-  bodyText: PropTypes.string,
-  media: PropTypes.node,
-  mediaWidth: PropTypes.string,
-  alignRight: PropTypes.bool
+  headline: PropTypes.string.isRequired,
+  bodyText: PropTypes.string.isRequired,
+  media: PropTypes.node.isRequired,
+  mediaWidth: PropTypes.number,
+  align: PropTypes.oneOf(['left', 'right', 'center']),
+  hasTextShadow: PropTypes.bool
 }
 export default ResponsiveBanner

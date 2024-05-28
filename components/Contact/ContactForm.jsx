@@ -37,7 +37,6 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
       'background-color',
       'box-shadow'
     ]),
-    fontFamily: 'var(--font-nunito)',
     '&:focus': {
       boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
       borderColor: theme.palette.primary.main
@@ -60,7 +59,6 @@ const BootstrapPhoneInput = styled(MuiTelInput)(({ theme }) => ({
       'background-color',
       'box-shadow'
     ]),
-    fontFamily: 'var(--font-nunito)',
     '&:focus': {
       boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
       borderColor: theme.palette.primary.main
@@ -76,7 +74,6 @@ const BootstrapTextArea = styled(TextField)(({ theme }) => ({
     'background-color',
     'box-shadow'
   ]),
-  fontFamily: 'var(--font-nunito)',
   '&:focus': {
     boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
     borderColor: theme.palette.primary.main
@@ -147,7 +144,6 @@ const ContactForm = () => {
           variant="body1"
           sx={{
             color: '#000000',
-            fontFamily: 'var(--font-nunito)',
             lineHeight: '30px',
             letterSpacing: '-1.1%'
           }}
@@ -203,8 +199,13 @@ const ContactForm = () => {
                 />
               )}
             />
+            {errors.name && (
+              <p className="text-app-green font-medium">
+                This field is required!
+              </p>
+            )}
             <p
-              className={`text-app-green font-nunito font-medium ${errors.name ? 'visible' : 'invisible'}`}
+              className={`text-app-green font-medium ${errors.name ? 'visible' : 'invisible'}`}
             >
               This field is required!
             </p>
@@ -238,7 +239,7 @@ const ContactForm = () => {
                 )}
               />
               <p
-                className={`text-app-green font-nunito font-medium ${['required', 'pattern'].includes(errors?.email?.type) ? 'visible' : 'invisible'}`}
+                className={`text-app-green font-medium ${['required', 'pattern'].includes(errors?.email?.type) ? 'visible' : 'invisible'}`}
               >
                 {errors?.email?.type === 'required'
                   ? 'This field is required!'
@@ -277,14 +278,10 @@ const ContactForm = () => {
                 name="phone"
               />
               {errors?.phone?.type === 'validate' && (
-                <p className="text-app-green font-nunito font-medium">
-                  Tel is invalid!
-                </p>
+                <p className="text-app-green font-medium">Tel is invalid!</p>
               )}
               {errors?.phone?.type === 'required' && (
-                <p className="text-app-green font-nunito font-medium">
-                  Tel is required!
-                </p>
+                <p className="text-app-green font-medium">Tel is required!</p>
               )}
             </FormControl>
           )}
@@ -295,7 +292,6 @@ const ContactForm = () => {
             variant="body1"
             sx={{
               color: '#9395A2',
-              fontFamily: 'var(--font-nunito)',
               lineHeight: '30px',
               letterSpacing: '-1.1%'
             }}
