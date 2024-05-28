@@ -28,11 +28,11 @@ export default function Frame2_2() {
   )
   const bodyText = (
     <span>
-      <CustomSpan>As a leader in IT services</CustomSpan> specializing in
-      blockchain technology, we are dedicated to transforming industries
-      worldwide. Under our bold slogan &apos;blocks the world&apos;, we strive
-      to unlock the full potential of blockchain technology, making every
-      transaction more transparent, secure, and efficient.
+      <CustomSpan fontSize="1.2em">As a leader in IT services</CustomSpan>{' '}
+      specializing in blockchain technology, we are dedicated to transforming
+      industries worldwide. Under our bold slogan &apos;blocks the world&apos;,
+      we strive to unlock the full potential of blockchain technology, making
+      every transaction more transparent, secure, and efficient.
     </span>
   )
   return (

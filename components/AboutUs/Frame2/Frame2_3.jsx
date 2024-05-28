@@ -28,9 +28,10 @@ export default function Frame2_2() {
   )
   const bodyText = (
     <span>
-      At <CustomSpan>Blockify</CustomSpan>, we recognize that each business has
-      unique needs. That&apos;s why we offer customized support from the initial
-      stages of project planning through to development and execution.
+      At <CustomSpan fontSize="1.2em">Blockify</CustomSpan>, we recognize that
+      each business has unique needs. That&apos;s why we offer customized
+      support from the initial stages of project planning through to development
+      and execution.
     </span>
   )
   return (

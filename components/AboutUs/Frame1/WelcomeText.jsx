@@ -3,50 +3,26 @@ import React from 'react'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 
-import { inter } from '@/ui/fonts'
-
 export default function WelcomeText() {
+  const textProps = {
+    sx: {
+      fontSize: { xs: '2rem', sm: '4.25rem' }
+    }
+  }
   return (
     <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center'
-      }}
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      textAlign="center"
+      color="white"
     >
-      <Typography
-        sx={{
-          typography: { xs: 'h5', sm: 'h2' },
-          fontFamily: `var(--${inter.variable})`,
-          color: 'white',
-          textAlign: 'center'
-        }}
-      >
-        Welcome to{' '}
-        <span style={{ fontWeight: 'bold', fontSize: '1.2em' }}>Blockify</span>
+      <Typography {...textProps}>
+        Welcome to <span style={{ fontWeight: 700 }}>Blockify</span>
       </Typography>
-      <Typography
-        sx={{
-          typography: { xs: 'h5', sm: 'h2' },
-          fontFamily: `var(--${inter.variable})`,
-          color: 'white',
-          textAlign: 'center'
-        }}
-      >
-        Reorganizing the World
-      </Typography>
-      <Typography
-        sx={{
-          typography: { xs: 'h5', sm: 'h2' },
-          fontFamily: `var(--${inter.variable})`,
-          color: 'white',
-          textAlign: 'center',
-          fontWeight: 'bold !important'
-        }}
-      >
-        <span style={{ fontWeight: 'bold', fontSize: '1.2em' }}>
-          Through Blockchain
-        </span>
+      <Typography {...textProps}>Reorganizing the World</Typography>
+      <Typography {...textProps}>
+        <span style={{ fontWeight: 700 }}>Through Blockchain</span>
       </Typography>
     </Box>
   )

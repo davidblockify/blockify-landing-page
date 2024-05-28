@@ -32,7 +32,7 @@ export default function Frame3() {
       Whether you&apos;re looking to intergrate blockchain into your existing
       operations or start a new venture, we prodive the expertise and tools
       necessary to seamlessly align your business model with the advencements of{' '}
-      <CustomSpan>Web 3.0</CustomSpan>
+      <span style={{ fontWeight: 'bold' }}>Web 3.0</span>
     </span>
   )
 

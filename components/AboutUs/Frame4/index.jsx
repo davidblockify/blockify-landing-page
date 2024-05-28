@@ -22,9 +22,10 @@ export default function Frame4() {
   )
   const frame4BodyText = (
     <span>
-      Join us at Blockify to explore how blockchain can revolutionize your
-      operations and connect you to the future of a fully integrated, global
-      network. Let’s build a smarter, more connected world together.
+      Join us at <CustomSpan fontSize="1.2em">Blockify</CustomSpan> to explore
+      how blockchain can revolutionize your operations and connect you to the
+      future of a fully integrated, global network. Let’s build a smarter, more
+      connected world together.
     </span>
   )
 

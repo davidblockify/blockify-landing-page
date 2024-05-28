@@ -36,12 +36,11 @@ const ContactFormContainer = ({ children, title }) => {
         <div className="w-[85%] h-full flex lg:flex-row flex-col lg:items-center justify-center gap-5">
           <div className="lg:w-[40%] lg:h-3/4">
             <Typography
-              variant="h5"
+              color="white"
               sx={{
-                typography: { lg: 'h3', md: 'h4' },
+                typography: { md: 'h3', lg: 'h3' },
                 width: 'max-content'
               }}
-              color={'white'}
             >
               {title}
               <hr className="w-[60%] border-white border-2 rounded-sm" />
