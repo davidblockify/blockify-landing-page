@@ -30,12 +30,14 @@ export default function Frame2_1() {
     </span>
   )
   return (
-    <ResponsiveBanner
-      id="card1"
-      headline={headline}
-      bodyText={bodyText}
-      media={image21}
-      mediaWidth={60}
-    />
+    <div className="mt-[100px]">
+      <ResponsiveBanner
+        id="card1"
+        headline={headline}
+        bodyText={bodyText}
+        media={image21}
+        mediaWidth={60}
+      />
+    </div>
   )
 }

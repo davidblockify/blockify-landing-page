@@ -6,7 +6,7 @@ import Box from '@mui/material/Box'
 export default function WelcomeText() {
   const textProps = {
     sx: {
-      fontSize: { xs: '2rem', md: '4.25rem' }
+      fontSize: { xs: '2rem', sm: '4.25rem' }
     }
   }
   return (

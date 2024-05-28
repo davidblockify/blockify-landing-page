@@ -8,6 +8,7 @@ import { ThemeProvider } from '@mui/material/styles'
 
 import TopBar from '@/components/TopBar'
 import { inter, nunitoSans } from '@/ui/fonts'
+// import Footer from '@/components/Footer'
 import theme from '@/theme'
 import ViewportBackground from '@/components/ViewportBackground'
 
@@ -44,6 +45,7 @@ export default function RootLayout({ children }) {
                 {children}
               </Box>
             </ViewportBackground>
+            {/* <Footer /> */}
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
