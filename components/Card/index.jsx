@@ -19,11 +19,11 @@ export default function Card({ imgSrc, title, description, size }) {
         fontWeight="bold"
         gutterBottom
         variant="h6"
-        className={`${imgSrc ? 'pt-5' : ''} text-center`}
+        className={`${imgSrc ? 'pt-6' : ''} pb-1 text-center`}
       >
         {title}
       </Typography>
-      <Typography variant="body2">{description}</Typography>
+      <Typography variant="body1">{description}</Typography>
     </CardContent>
   )
 }

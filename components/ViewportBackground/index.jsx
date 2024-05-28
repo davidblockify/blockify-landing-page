@@ -4,6 +4,8 @@ import { usePathname } from 'next/navigation'
 
 import Background from '../Background'
 
+import Frame1 from '@/components/AboutUs/Frame1'
+import HomeBanner from '@/public/background.png'
 import ServiceBanner from '@/public/service-banner.png'
 import ContactBanner from '@/public/contact-banner.png'
 
@@ -14,9 +16,8 @@ export default function ViewportBackground({ children }) {
   const isContactPage = pathname === '/contact'
 
   return (
-    <div
-      className={`relative mx-auto my-16 h-screen ${isHome ? 'bg-[url(/background.png)] bg-cover bg-center' : ''}`}
-    >
+    <div className={'mx-auto my-16 md:my-20'}>
+      {isHome && <Background imgSrc={HomeBanner} textBackground={<Frame1 />} />}
       {isServicePage && <Background imgSrc={ServiceBanner} />}
       {isContactPage && <Background imgSrc={ContactBanner} />}
       {children}
