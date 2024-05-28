@@ -8,15 +8,12 @@ gsap.registerPlugin(ScrollTrigger)
 
 export const useAboutUsAnimations = () => {
   const animateBanner = (ref, triggerId, type) => {
-    const directionX = ['left', 'right']
-
-    const direction = directionX.includes(type)
-      ? {
-          x: type === 'left' ? 500 : -500
-        }
-      : {
-          y: type === 'top' ? 500 : -500
-        }
+    const direction = {
+      left: { x: 500 },
+      right: { x: -500 },
+      top: { y: 500 },
+      bottom: { y: -500 }
+    }[type]
 
     if (ref.current) {
       gsap.from(ref.current, {

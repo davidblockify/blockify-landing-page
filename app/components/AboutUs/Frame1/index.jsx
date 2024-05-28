@@ -17,7 +17,8 @@ export default function Frame1() {
         flexDirection: 'column',
         alignItems: 'center',
         width: '100%',
-        height: '100vh'
+        height: '100vh',
+        paddingX: { md: '10%', xs: '5%' }
       }}
     >
       <Box
@@ -30,8 +31,10 @@ export default function Frame1() {
         <Image
           src="/logo-blured.png"
           alt="logo"
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{
+            objectFit: 'cover'
+          }}
         />
       </Box>
       <WelcomeText />

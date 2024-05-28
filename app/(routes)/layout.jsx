@@ -6,6 +6,8 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
 import Box from '@mui/material/Box'
 import { ThemeProvider } from '@mui/material/styles'
 
+import Footer from '../components/Footer'
+
 import TopBar from '@/app/components/TopBar'
 import theme from '@/app/theme'
 import ViewportBackground from '@/app/components/ViewportBackground'
@@ -28,7 +30,7 @@ export default function RootLayout({ children }) {
           <ThemeProvider theme={theme}>
             <TopBar />
             <ViewportBackground>
-              <Box px="10%" width="80wv">
+              <Box sx={{ paddingX: { md: '10%', xs: '5%' } }} width="80wv">
                 {children}
               </Box>
             </ViewportBackground>
@@ -40,6 +42,7 @@ export default function RootLayout({ children }) {
               draggable
               pauseOnHover
             />
+            <Footer />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
