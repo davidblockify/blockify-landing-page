@@ -30,7 +30,7 @@ const renderCompanyInfoList = (items) => {
 
 const ContactFormContainer = ({ children, title }) => {
   return (
-    <div className="lg:w-4/5 w-full h-full flex flex-col rounded-lg mb-5">
+    <div className="lg:w-4/5 w-full h-full flex flex-col rounded-lg">
       <div className="w-full lg:h-[8rem] h-[10rem] bg-[#0FCB52] flex flex-row justify-center rounded-lg md:rounded-br-none md:rounded-bl-none drop-shadow-lg">
         <div className="w-[88%] h-full flex lg:flex-row flex-col lg:items-center lg:justify-between sm:justify-center gap-5">
           <div className="lg:w-[40%]">

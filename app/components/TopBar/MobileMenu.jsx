@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded'
 import Drawer from '@mui/material/Drawer'
+import { Typography } from '@mui/material'
 
 import CustomLink from '../shared/CustomLink'
 
@@ -54,7 +55,9 @@ export default function MobileMenu({ menuItems }) {
               color={pathname === menuItem.href ? 'green' : 'black'}
             >
               <MenuItem onClick={handleToggle}>
-                <span className="font-bold">{menuItem.label}</span>
+                <Typography variant="h5" fontWeight="bold">
+                  {menuItem.label}
+                </Typography>
               </MenuItem>
             </CustomLink>
           ))}
