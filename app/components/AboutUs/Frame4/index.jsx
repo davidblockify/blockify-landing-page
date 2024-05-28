@@ -7,9 +7,9 @@ import Box from '@mui/material/Box'
 import image1 from '@/public/about-us-4-1.png'
 import image2 from '@/public/about-us-4-2.png'
 import image3 from '@/public/about-us-4-3.png'
-import CustomSpan from '@/components/shared/CustomSpan'
-import ResponsiveBanner from '@/components/shared/ResponsiveBanner'
-import { useAboutUsAnimations } from '@/hooks/useAboutUsAnimations'
+import CustomSpan from '@/app/components/shared/CustomSpan'
+import ResponsiveBanner from '@/app/components/shared/ResponsiveBanner'
+import { useAboutUsAnimations } from '@/app/hooks/useAboutUsAnimations'
 
 export default function Frame4() {
   const { banner5_1, banner5_2, banner5_3 } = useAboutUsAnimations()

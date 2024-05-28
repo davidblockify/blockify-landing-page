@@ -6,7 +6,7 @@ import Box from '@mui/material/Box'
 
 import LogoDesktop from '@/public/logo-desktop.png'
 import LogoMobile from '@/public/logo-mobile.png'
-import useViewPort from '@/hooks/useViewPort'
+import useViewPort from '@/app/hooks/useViewPort'
 
 export default function LogoBlockify({ displaySettings }) {
   const { isMobile } = useViewPort()

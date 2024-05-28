@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 
 import Background from '../Background'
 
-import Frame1 from '@/components/AboutUs/Frame1'
+import Frame1 from '@/app/components/AboutUs/Frame1'
 import HomeBanner from '@/public/background.png'
 import ServiceBanner from '@/public/service-banner.png'
 import ContactBanner from '@/public/contact-banner.png'

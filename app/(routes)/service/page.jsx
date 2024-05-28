@@ -4,15 +4,15 @@ import React from 'react'
 import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
 
-import Card from '@/components/Card'
+import Card from '@/app/components/Card'
 import ServiceImage1 from '@/public/service-1.svg'
 import ServiceImage2 from '@/public/service-2.svg'
 import ServiceImage3 from '@/public/service-3.svg'
 import ServiceImage4 from '@/public/service-4.svg'
 import ServiceImage5 from '@/public/service-5.svg'
 import ServiceImage6 from '@/public/service-6.svg'
-import HeadingText from '@/components/HeadingText'
-import useViewPort from '@/hooks/useViewPort'
+import HeadingText from '@/app/components/HeadingText'
+import useViewPort from '@/app/hooks/useViewPort'
 
 function ServicePage() {
   const { isTablet } = useViewPort()

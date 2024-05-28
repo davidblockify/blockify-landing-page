@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 
-import useViewPort from '@/hooks/useViewPort'
+import useViewPort from '@/app/hooks/useViewPort'
 
 function ResponsiveBanner({
   id,

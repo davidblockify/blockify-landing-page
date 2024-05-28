@@ -10,11 +10,6 @@
       "StackName": "amplify-blockifylandingpage-dev-3450b",
       "StackId": "arn:aws:cloudformation:ap-southeast-1:891377197738:stack/amplify-blockifylandingpage-dev-3450b/ce175180-19e3-11ef-895e-06096cdd2283",
       "AmplifyAppId": "d3ugfzuqbed69k"
-    },
-    "categories": {
-      "hosting": {
-        "S3AndCloudFront": {}
-      }
     }
   }
 }
