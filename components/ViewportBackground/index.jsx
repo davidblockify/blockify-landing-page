@@ -1,5 +1,7 @@
 'use client'
 
+import React from 'react'
+
 import { usePathname } from 'next/navigation'
 
 import Background from '../Background'
@@ -11,15 +13,22 @@ import ContactBanner from '@/public/contact-banner.png'
 
 export default function ViewportBackground({ children }) {
   const pathname = usePathname()
-  const isHome = pathname === '/'
-  const isServicePage = pathname === '/service'
-  const isContactPage = pathname === '/contact'
+  const banners = {
+    '/': { imgSrc: HomeBanner, textBackground: <Frame1 /> },
+    '/service': { imgSrc: ServiceBanner },
+    '/contact': { imgSrc: ContactBanner }
+  }
+
+  const banner = banners[pathname]
 
   return (
-    <div className={'mx-auto my-16 md:my-20'}>
-      {isHome && <Background imgSrc={HomeBanner} textBackground={<Frame1 />} />}
-      {isServicePage && <Background imgSrc={ServiceBanner} />}
-      {isContactPage && <Background imgSrc={ContactBanner} />}
+    <div className="my-16 md:my-20">
+      {banner && (
+        <Background
+          imgSrc={banner.imgSrc}
+          textBackground={banner.textBackground}
+        />
+      )}
       {children}
     </div>
   )

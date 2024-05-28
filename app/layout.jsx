@@ -8,7 +8,7 @@ import { ThemeProvider } from '@mui/material/styles'
 
 import TopBar from '@/components/TopBar'
 import { inter, nunitoSans } from '@/ui/fonts'
-// import Footer from '@/components/Footer'
+import Footer from '@/components/Footer'
 import theme from '@/theme'
 import ViewportBackground from '@/components/ViewportBackground'
 
@@ -32,6 +32,11 @@ export default function RootLayout({ children }) {
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <TopBar />
+            <ViewportBackground>
+              <Box px="10%" width="80wv">
+                {children}
+              </Box>
+            </ViewportBackground>
             <ToastContainer
               position="bottom-right"
               autoClose={3000}
@@ -40,12 +45,7 @@ export default function RootLayout({ children }) {
               draggable
               pauseOnHover
             />
-            <ViewportBackground>
-              <Box px="10%" width="80wv">
-                {children}
-              </Box>
-            </ViewportBackground>
-            {/* <Footer /> */}
+            <Footer />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
