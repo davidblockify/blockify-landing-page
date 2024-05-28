@@ -39,9 +39,7 @@ function TopBar() {
             height: '100%'
           }}
         >
-          <LogoBlockify displaySettings={{ xs: 'none', md: 'flex' }} />
-
-          <LogoBlockify displaySettings={{ xs: 'flex', md: 'none' }} />
+          <LogoBlockify />
 
           <MobileMenu menuItems={menuItems} />
 
