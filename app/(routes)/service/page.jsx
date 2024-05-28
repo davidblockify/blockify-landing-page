@@ -59,7 +59,7 @@ function ServicePage() {
   ]
 
   return (
-    <Box pt={15} pb={10}>
+    <Box className="pt-[60px] md:pt-[120px]">
       <HeadingText
         isUnderLine
         title={
@@ -77,7 +77,7 @@ function ServicePage() {
               imgSrc={i.img}
               title={i.title}
               description={i.description}
-              size={isTablet ? 72 : 84}
+              size={84}
             />
           </Grid>
         ))}

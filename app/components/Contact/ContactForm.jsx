@@ -138,7 +138,7 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="w-[88%] mt-10 mb-10 flex flex-col gap-3">
+    <div className="w-[88%] mt-10 mb-5 md:mb-10 flex flex-col gap-3">
       <Box className="flex lg:flex-row flex-col lg:items-center lg:gap-14 gap-5">
         <Typography
           variant="body1"
