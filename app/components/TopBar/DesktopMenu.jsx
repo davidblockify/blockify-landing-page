@@ -10,7 +10,6 @@ import { styled } from '@mui/material/styles'
 
 const StyledTypograpghy = styled(Typography)(({ color }) => ({
   color,
-  fontFamily: 'var(--font-nunito)',
   fontWeight: 'bold',
   textTransform: 'none',
   fontSize: '1.4em',

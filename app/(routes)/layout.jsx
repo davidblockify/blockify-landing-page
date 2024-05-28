@@ -6,10 +6,10 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
 import Box from '@mui/material/Box'
 import { ThemeProvider } from '@mui/material/styles'
 
-import TopBar from '@/app/components/TopBar'
-import { inter, nunitoSans } from '@/app/ui/fonts'
-import theme from '@/app/theme'
-import ViewportBackground from '@/app/components/ViewportBackground'
+import TopBar from '@/components/TopBar'
+// import Footer from '@/components/Footer'
+import theme from '@/theme'
+import ViewportBackground from '@/components/ViewportBackground'
 
 import './globals.css'
 
@@ -24,10 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${nunitoSans.variable}`}
-        suppressHydrationWarning
-      >
+      <body suppressHydrationWarning>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <TopBar />
