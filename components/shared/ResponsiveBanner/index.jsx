@@ -112,7 +112,7 @@ ResponsiveBanner.propTypes = {
   bodyText: PropTypes.string.isRequired,
   media: PropTypes.node.isRequired,
   mediaWidth: PropTypes.number,
-  align: PropTypes.oneOf(['left', 'right', 'center']),
+  align: PropTypes.oneOf(['left', 'right', 'bottom']),
   hasTextShadow: PropTypes.bool
 }
 export default ResponsiveBanner
