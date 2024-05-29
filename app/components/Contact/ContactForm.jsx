@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+'use client'
 import { useRef, useState } from 'react'
 
 import { useForm } from 'react-hook-form'
@@ -6,6 +7,7 @@ import emailjs from '@emailjs/browser'
 import { matchIsValidTel, MuiTelInput } from 'mui-tel-input'
 import Image from 'next/image'
 import { toast } from 'react-toastify'
+import { useSearchParams, useRouter } from 'next/navigation'
 
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
@@ -84,6 +86,8 @@ const BootstrapTextArea = styled(TextField)(({ theme }) => ({
 }))
 
 const ContactForm = () => {
+  const searchParams = useSearchParams()
+  const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
   const [radioSelected, setRadioSelected] = useState('email')
   const form = useRef()
@@ -126,8 +130,9 @@ const ContactForm = () => {
       .then(
         () => {
           console.log('SUCCESS!')
-          toast.success('Thanks for submit your request!')
-          setIsLoading(false)
+          const params = new URLSearchParams(searchParams.toString())
+          params.set('status', 'success')
+          router.push('contact' + '?' + params.toString())
         },
         (error) => {
           console.log('FAILED...', error)
