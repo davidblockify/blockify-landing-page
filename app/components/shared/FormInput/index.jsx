@@ -53,7 +53,7 @@ export default function FormInput(props) {
         )}
       />
       {hasError && (
-        <FormHelperText sx={{ opacity: hasError ? 1 : 0 }} error>
+        <FormHelperText sx={{ position: 'absolute', bottom: '-20px' }} error>
           {errorText}
         </FormHelperText>
       )}

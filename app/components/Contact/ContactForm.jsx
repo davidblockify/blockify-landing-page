@@ -282,7 +282,12 @@ const ContactForm = () => {
               />
             )
           }
-          sx={{ fontSize: '12px', color: 'white', padding: '8px' }}
+          sx={{
+            fontSize: '12px',
+            color: 'white',
+            padding: '8px',
+            textTransform: 'none'
+          }}
         >
           Send
         </Button>
