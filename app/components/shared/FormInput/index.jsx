@@ -23,7 +23,7 @@ export default function FormInput(props) {
     rows = 1
   } = props
 
-  const isError = !!errors[name]?.type
+  const hasError = !!errors[name]?.type
 
   return (
     <FormControl variant="standard">
@@ -52,7 +52,11 @@ export default function FormInput(props) {
           />
         )}
       />
-      {isError && <FormHelperText error>{errorText}</FormHelperText>}
+      {hasError && (
+        <FormHelperText sx={{ opacity: hasError ? 1 : 0 }} error>
+          {errorText}
+        </FormHelperText>
+      )}
     </FormControl>
   )
 }

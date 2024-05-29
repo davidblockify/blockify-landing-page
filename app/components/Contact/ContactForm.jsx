@@ -138,8 +138,8 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="sm:w-[90%] mt-10 mb-5 md:mb-10 flex flex-col gap-3">
-      <Box className="flex lg:flex-row flex-col lg:items-center lg:gap-14 gap-5">
+    <div className="w-[90%] mt-10 mb-5 md:mb-10 flex flex-col gap-3">
+      <Box className="flex lg:flex-row flex-col lg:items-center mb-0.625 gap-5">
         <Typography
           variant="body1"
           sx={{
@@ -173,11 +173,11 @@ const ContactForm = () => {
       <Box
         ref={form}
         component="form"
-        noValidate
-        className="flex lg:flex-row flex-col gap-5 md:gap-10 mt-5"
+        className="flex lg:flex-row flex-col gap-6 mt-5 justify-between"
         color="#9395A2"
+        noValidate
       >
-        <Stack className="lg:w-1/2 justify-between gap-1">
+        <Stack className="lg:w-[48%] gap-6">
           <FormInput
             id="name"
             name="name"
@@ -247,21 +247,23 @@ const ContactForm = () => {
           )}
         </Stack>
 
-        <FormInput
-          name="message"
-          label="Your notice"
-          control={control}
-          placeholder="Input your notice"
-          component={BootstrapTextArea}
-          rows={5}
-          multiline
-          InputLabelProps={{
-            shrink: true
-          }}
-        />
+        <Stack className="lg:w-[48%]">
+          <FormInput
+            name="message"
+            label="Your notice"
+            control={control}
+            placeholder="Input your notice"
+            component={BootstrapTextArea}
+            multiline
+            rows={4.8}
+            InputLabelProps={{
+              shrink: true
+            }}
+          />
+        </Stack>
       </Box>
 
-      <Box className="flex flex-row justify-end">
+      <Box className="flex flex-row justify-end lg:pt-4 pt-3">
         <Button
           variant="contained"
           color="primary"
@@ -280,7 +282,7 @@ const ContactForm = () => {
               />
             )
           }
-          sx={{ fontSize: '12px', color: 'white' }}
+          sx={{ fontSize: '12px', color: 'white', padding: '8px' }}
         >
           Send
         </Button>
