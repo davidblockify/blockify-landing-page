@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+'use client'
 import { useRef, useState } from 'react'
 
 import { useForm } from 'react-hook-form'
