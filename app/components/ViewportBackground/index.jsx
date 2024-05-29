@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { usePathname } from 'next/navigation'
+import { usePathname, useSearchParams } from 'next/navigation'
 
 import Background from '../Background'
 
@@ -15,6 +15,9 @@ import ContactBannerMb from '@/public/contact-banner-mb.png'
 
 export default function ViewportBackground({ children }) {
   const pathname = usePathname()
+  const searchParams = useSearchParams()
+  const isHiddenBackground = searchParams.get('status') === 'success'
+
   const banners = {
     '/': { imgSrc: HomeBanner, textBackground: <Frame1 /> },
     '/service': { imgSrc: [ServiceBanner, ServiceBannerMb] },
@@ -25,7 +28,7 @@ export default function ViewportBackground({ children }) {
 
   return (
     <div className="my-16 md:my-20">
-      {banner && (
+      {banner && !isHiddenBackground && (
         <Background
           imgSrc={banner.imgSrc}
           textBackground={banner.textBackground}
