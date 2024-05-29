@@ -20,7 +20,8 @@ export default function FormInput(props) {
     defaultCountry = 'VN',
     multiline = false,
     InputLabelProps = { shrink: false },
-    rows = 1
+    rows = 1,
+    isRequired
   } = props
 
   const hasError = !!errors[name]?.type
@@ -34,7 +35,7 @@ export default function FormInput(props) {
           letterSpacing: '-1.1%'
         }}
       >
-        {label}
+        {label} {isRequired && <span className="text-red-600">*</span>}
       </Typography>
       <Controller
         name={name}

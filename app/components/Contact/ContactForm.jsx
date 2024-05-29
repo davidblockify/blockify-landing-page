@@ -181,17 +181,14 @@ const ContactForm = () => {
           <FormInput
             id="name"
             name="name"
-            label={
-              <>
-                Your name <span className="text-red-600">*</span>
-              </>
-            }
+            label="Your name "
             control={control}
             errors={errors}
             rules={{ required: true }}
             placeholder="Input your name"
             errorText="This field is required!"
             component={BootstrapInput}
+            isRequired
           />
 
           {radioSelected === 'email' && (
@@ -199,11 +196,8 @@ const ContactForm = () => {
               id="email"
               name="email"
               errors={errors}
-              label={
-                <>
-                  Your email <span className="text-red-600">*</span>
-                </>
-              }
+              label="Your email"
+              isRequired
               rules={{
                 required: true,
                 pattern: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
@@ -222,11 +216,7 @@ const ContactForm = () => {
           {radioSelected === 'phone' && (
             <FormInput
               name="phone"
-              label={
-                <>
-                  Your phone <span className="text-red-600">*</span>
-                </>
-              }
+              label="Your phone"
               control={control}
               rules={{
                 required: true,
@@ -236,6 +226,7 @@ const ContactForm = () => {
               component={BootstrapPhoneInput}
               placeholder="Input your phone"
               defaultCountry="VN"
+              isRequired
               errorText={
                 errors?.phone?.type === 'validate'
                   ? 'Tel is invalid!'
