@@ -1,4 +1,3 @@
-export const dynamic = 'force-dynamic'
 import React from 'react'
 
 import Grid from '@mui/material/Grid'
@@ -6,6 +5,8 @@ import Box from '@mui/material/Box'
 
 import HeadingText from '@/app/components/HeadingText'
 import ServiceList from '@/app/components/ServiceList/ServiceList'
+
+export const dynamic = 'force-dynamic'
 
 function ServicePage() {
   return (
