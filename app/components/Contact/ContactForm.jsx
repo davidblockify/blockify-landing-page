@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { useRef, useState } from 'react'
 
-import { useForm, Controller } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import emailjs from '@emailjs/browser'
 import { matchIsValidTel, MuiTelInput } from 'mui-tel-input'
 import Image from 'next/image'
@@ -9,7 +9,6 @@ import { toast } from 'react-toastify'
 
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
-import FormControl from '@mui/material/FormControl'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import InputBase from '@mui/material/InputBase'
 import Radio from '@mui/material/Radio'
@@ -18,7 +17,9 @@ import Stack from '@mui/material/Stack'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import { alpha, styled } from '@mui/material/styles'
-import RotateRightIcon from '@mui/icons-material/RotateRight'
+import CircularProgress from '@mui/material/CircularProgress'
+
+import FormInput from '../shared/FormInput'
 
 import PaperPlaneIcon from '@/public/icons/paper-plane-icon.svg'
 
@@ -43,7 +44,6 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
     }
   }
 }))
-
 const BootstrapPhoneInput = styled(MuiTelInput)(({ theme }) => ({
   'label + &': {
     marginTop: theme.spacing(3)
@@ -85,8 +85,9 @@ const BootstrapTextArea = styled(TextField)(({ theme }) => ({
 
 const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false)
-
+  const [radioSelected, setRadioSelected] = useState('email')
   const form = useRef()
+
   const {
     control,
     handleSubmit,
@@ -99,8 +100,6 @@ const ContactForm = () => {
       message: ''
     }
   })
-
-  const [radioSelected, setRadioSelected] = useState('email')
 
   const handleRadioChange = (event) => {
     setRadioSelected(event.target.value)
@@ -138,14 +137,21 @@ const ContactForm = () => {
       )
   }
 
+  const phoneErrorText = (errors) => {
+    return {
+      validate: 'Tel is invalid!',
+      required: 'Tel is required!'
+    }[errors?.phone?.type]
+  }
+
   return (
-    <div className="w-[88%] mt-10 mb-5 md:mb-10 flex flex-col gap-3">
-      <Box className="flex lg:flex-row flex-col lg:items-center lg:gap-14 gap-5">
+    <div className="w-[90%] mt-10 mb-5 md:mb-10 flex flex-col gap-3">
+      <Box className="flex lg:flex-row flex-col lg:items-center mb-0.625 gap-5">
         <Typography
           variant="body1"
           sx={{
             color: '#000000',
-            lineHeight: '30px',
+            lineHeight: '1.5rem',
             letterSpacing: '-1.1%'
           }}
         >
@@ -170,171 +176,108 @@ const ContactForm = () => {
       </Box>
 
       <hr />
+
       <Box
         ref={form}
         component="form"
+        className="flex lg:flex-row flex-col gap-6 mt-5 justify-between"
+        color="#9395A2"
         noValidate
-        className="flex lg:flex-row flex-col gap-5 md:gap-10 mt-5"
       >
-        <Stack className="lg:w-1/2 justify-between gap-1">
-          <FormControl variant="standard">
-            <Typography
-              variant="body1"
-              sx={{
-                color: '#9395A2',
-                lineHeight: '30px',
-                letterSpacing: '-1.1%'
-              }}
-            >
-              Your name <span className="text-red-600">*</span>
-            </Typography>
-            <Controller
-              name="name"
-              control={control}
-              rules={{ required: true }}
-              render={({ field }) => (
-                <BootstrapInput
-                  {...field}
-                  id="name"
-                  placeholder="Input your name"
-                />
-              )}
-            />
-            <p
-              className={`text-app-green font-medium ${errors.name ? 'visible' : 'invisible'}`}
-            >
-              This field is required!
-            </p>
-          </FormControl>
+        <Stack className="lg:w-[48%] gap-6">
+          <FormInput
+            id="name"
+            name="name"
+            label="Your name "
+            control={control}
+            errors={errors}
+            rules={{ required: true }}
+            placeholder="Input your name"
+            errorText="This field is required!"
+            component={BootstrapInput}
+          />
 
           {radioSelected === 'email' && (
-            <FormControl variant="standard">
-              <Typography
-                variant="body1"
-                sx={{
-                  color: '#9395A2',
-                  lineHeight: '30px',
-                  letterSpacing: '-1.1%'
-                }}
-              >
-                Your email <span className="text-red-600">*</span>
-              </Typography>
-              <Controller
-                name="email"
-                control={control}
-                rules={{
-                  required: true,
-                  pattern: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
-                }}
-                render={({ field }) => (
-                  <BootstrapInput
-                    {...field}
-                    id="email"
-                    placeholder="Input your email"
-                  />
-                )}
-              />
-              <p
-                className={`text-app-green font-medium ${['required', 'pattern'].includes(errors?.email?.type) ? 'visible' : 'invisible'}`}
-              >
-                {errors?.email?.type === 'required'
+            <FormInput
+              id="email"
+              name="email"
+              errors={errors}
+              label="Your email"
+              rules={{
+                required: true,
+                pattern: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+              }}
+              control={control}
+              placeholder="Input your email"
+              component={BootstrapInput}
+              errorText={
+                errors?.email?.type === 'required'
                   ? 'This field is required!'
-                  : 'Wrong email format!'}
-              </p>
-            </FormControl>
+                  : 'Wrong email format!'
+              }
+            />
           )}
 
           {radioSelected === 'phone' && (
-            <FormControl variant="standard">
-              <Typography
-                variant="body1"
-                sx={{
-                  color: '#9395A2',
-                  lineHeight: '30px',
-                  letterSpacing: '-1.1%'
-                }}
-              >
-                Your phone <span className="text-red-600">*</span>
-              </Typography>
-
-              <Controller
-                control={control}
-                rules={{
-                  required: true,
-                  validate: (value) => matchIsValidTel(value)
-                }}
-                render={({ field }) => (
-                  <BootstrapPhoneInput
-                    {...field}
-                    defaultCountry="VN"
-                    required
-                    placeholder="Input your phone"
-                  />
-                )}
-                name="phone"
-              />
-              {errors?.phone?.type === 'validate' && (
-                <p className="text-app-green font-medium">Tel is invalid!</p>
-              )}
-              {errors?.phone?.type === 'required' && (
-                <p className="text-app-green font-medium">Tel is required!</p>
-              )}
-            </FormControl>
+            <FormInput
+              name="phone"
+              label="Your phone"
+              control={control}
+              rules={{
+                required: true,
+                validate: (value) => matchIsValidTel(value)
+              }}
+              errors={errors}
+              component={BootstrapPhoneInput}
+              placeholder="Input your phone"
+              errorText={phoneErrorText(errors)}
+            />
           )}
         </Stack>
 
-        <FormControl variant="standard" className="lg:w-1/2">
-          <Typography
-            variant="body1"
-            sx={{
-              color: '#9395A2',
-              lineHeight: '30px',
-              letterSpacing: '-1.1%'
-            }}
-          >
-            Your notice
-          </Typography>
-          <Controller
+        <Stack className="lg:w-[48%]">
+          <FormInput
             name="message"
+            label="Your notice"
             control={control}
-            render={({ field }) => (
-              <BootstrapTextArea
-                {...field}
-                variant="outlined"
-                InputLabelProps={{
-                  shrink: true
-                }}
-                id="message"
-                placeholder="Input your notice"
-                rows={5}
-                multiline
-              />
-            )}
+            placeholder="Input your notice"
+            component={BootstrapTextArea}
+            multiline
+            rows={4.8}
+            InputLabelProps={{
+              shrink: true
+            }}
           />
-        </FormControl>
+        </Stack>
       </Box>
 
-      <Box className="flex flex-row justify-end mt-5">
+      <Box className="flex flex-row justify-end lg:pt-4 pt-3">
         <Button
           variant="contained"
           color="primary"
-          className="w-[5rem]"
           disabled={isLoading}
           onClick={handleSubmit(onSubmit)}
+          endIcon={
+            isLoading ? (
+              <CircularProgress size={12} />
+            ) : (
+              <Image
+                loading="lazy"
+                src={PaperPlaneIcon}
+                width={20}
+                height="auto"
+                alt="end-icon"
+              />
+            )
+          }
+          sx={{
+            fontSize: '12px',
+            color: 'white',
+            padding: '8px',
+            textTransform: 'none'
+          }}
         >
-          <span className="text-white normal-case mr-1">Send</span>
-
-          {isLoading ? (
-            <RotateRightIcon className="animate-spin" />
-          ) : (
-            <Image
-              loading="lazy"
-              src={PaperPlaneIcon}
-              width={20}
-              height="auto"
-              alt="end-icon"
-            />
-          )}
+          Send
         </Button>
       </Box>
     </div>

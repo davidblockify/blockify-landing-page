@@ -32,8 +32,8 @@ const ContactFormContainer = ({ children, title }) => {
   return (
     <div className="lg:w-4/5 w-full h-full flex flex-col rounded-lg">
       <div className="w-full lg:h-[8rem] h-[10rem] bg-[#0FCB52] flex flex-row justify-center rounded-lg md:rounded-br-none md:rounded-bl-none drop-shadow-lg">
-        <div className="w-[88%] h-full flex lg:flex-row flex-col lg:items-center lg:justify-between sm:justify-center gap-5">
-          <div className="lg:w-[40%]">
+        <div className="w-[90%] h-full flex lg:flex-row flex-col lg:items-center lg:justify-between justify-center gap-5">
+          <div className="lg:w-[50%]">
             <div className="max-w-max">
               <Typography
                 color="white"
@@ -41,7 +41,7 @@ const ContactFormContainer = ({ children, title }) => {
                   typography: { xs: 'h6', md: 'h3' }
                 }}
               >
-                {title}
+                <span style={{ fontWeight: 700 }}>{title}</span>
               </Typography>
 
               <hr className="w-[60%] border-white border-2 rounded-sm" />
