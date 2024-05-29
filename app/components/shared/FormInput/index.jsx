@@ -12,7 +12,7 @@ export default function FormInput(props) {
     name,
     label,
     control,
-    rules = {},
+    rules = { required: false },
     placeholder,
     errors = {},
     errorText = '',
@@ -20,8 +20,7 @@ export default function FormInput(props) {
     defaultCountry = 'VN',
     multiline = false,
     InputLabelProps = { shrink: false },
-    rows = 1,
-    isRequired
+    rows = 1
   } = props
 
   const hasError = !!errors[name]?.type
@@ -35,7 +34,7 @@ export default function FormInput(props) {
           letterSpacing: '-1.1%'
         }}
       >
-        {label} {isRequired && <span className="text-red-600">*</span>}
+        {label} {rules.required && <span className="text-red-600">*</span>}
       </Typography>
       <Controller
         name={name}

@@ -137,6 +137,13 @@ const ContactForm = () => {
       )
   }
 
+  const phoneErrorText = (errors) => {
+    return {
+      validate: 'Tel is invalid!',
+      required: 'Tel is required!'
+    }[errors?.phone?.type]
+  }
+
   return (
     <div className="w-[90%] mt-10 mb-5 md:mb-10 flex flex-col gap-3">
       <Box className="flex lg:flex-row flex-col lg:items-center mb-0.625 gap-5">
@@ -188,7 +195,6 @@ const ContactForm = () => {
             placeholder="Input your name"
             errorText="This field is required!"
             component={BootstrapInput}
-            isRequired
           />
 
           {radioSelected === 'email' && (
@@ -197,7 +203,6 @@ const ContactForm = () => {
               name="email"
               errors={errors}
               label="Your email"
-              isRequired
               rules={{
                 required: true,
                 pattern: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
@@ -225,15 +230,7 @@ const ContactForm = () => {
               errors={errors}
               component={BootstrapPhoneInput}
               placeholder="Input your phone"
-              defaultCountry="VN"
-              isRequired
-              errorText={
-                errors?.phone?.type === 'validate'
-                  ? 'Tel is invalid!'
-                  : errors?.phone?.type === 'required'
-                    ? 'Tel is required!'
-                    : ''
-              }
+              errorText={phoneErrorText(errors)}
             />
           )}
         </Stack>
