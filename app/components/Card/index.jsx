@@ -5,7 +5,12 @@ import CardContent from '@mui/material/CardContent'
 
 export default function Card({ imgSrc, title, description, size }) {
   return (
-    <CardContent className="bg-white flex flex-col items-center">
+    <CardContent
+      className="bg-white flex flex-col items-center"
+      sx={{
+        paddingX: 0
+      }}
+    >
       {imgSrc && (
         <Image
           loading="lazy"

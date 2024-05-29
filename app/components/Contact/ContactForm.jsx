@@ -108,6 +108,7 @@ const ContactForm = () => {
   const onSubmit = (data) => {
     setIsLoading(true)
     const payload = {
+      from_name: data.name,
       name: data.name,
       message: data.message,
       [radioSelected]: data[radioSelected]
@@ -137,7 +138,7 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="sm:w-[90%] w-full mt-10 mb-10 flex flex-col gap-3">
+    <div className="sm:w-[90%] mt-10 mb-5 md:mb-10 flex flex-col gap-3">
       <Box className="flex lg:flex-row flex-col lg:items-center lg:gap-14 gap-5">
         <Typography
           variant="body1"
