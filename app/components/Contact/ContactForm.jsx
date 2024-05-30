@@ -49,7 +49,7 @@ const BootstrapPhoneInput = styled(MuiTelInput)(({ theme }) => ({
     marginTop: theme.spacing(3)
   },
   '& .MuiInputBase-input': {
-    borderRadius: 4,
+    borderRadius: '1px 4px 4px 1px',
     position: 'relative',
     border: '1px solid',
     borderColor: '#E0E3E7',
@@ -139,14 +139,21 @@ const ContactForm = () => {
 
   const phoneErrorText = (errors) => {
     return {
-      validate: 'Tel is invalid!',
-      required: 'Tel is required!'
+      required: 'Phone number is required.',
+      validate: 'Invalid phone number format. Please check and try again.'
     }[errors?.phone?.type]
+  }
+
+  const emailErrorText = (errors) => {
+    return {
+      required: 'Email is required.',
+      pattern: 'Invalid email format. Please check and try again.'
+    }[errors?.email?.type]
   }
 
   return (
     <div className="w-[90%] mt-10 mb-5 md:mb-10 flex flex-col gap-3">
-      <Box className="flex lg:flex-row flex-col lg:items-center mb-0.625 gap-5">
+      <Box className="flex lg:flex-row flex-col lg:items-center mb-0.625 lg:gap-16 gap-5">
         <Typography
           variant="body1"
           sx={{
@@ -160,13 +167,20 @@ const ContactForm = () => {
         <RadioGroup
           row
           aria-labelledby="demo-row-radio-buttons-group-label"
+          className="gap-14"
           sx={{
+            marginLeft: '4px',
+            '& .MuiButtonBase-root': {
+              padding: '4px'
+            },
             '& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root)': {
               color: 'black'
+            },
+            '& .MuiSvgIcon-root': {
+              fontSize: 16
             }
           }}
           name="row-radio-buttons-group"
-          className="md:gap-10"
           value={radioSelected}
           onChange={handleRadioChange}
         >
@@ -193,7 +207,7 @@ const ContactForm = () => {
             errors={errors}
             rules={{ required: true }}
             placeholder="Input your name"
-            errorText="This field is required!"
+            errorText="Please provide your name."
             component={BootstrapInput}
           />
 
@@ -210,11 +224,7 @@ const ContactForm = () => {
               control={control}
               placeholder="Input your email"
               component={BootstrapInput}
-              errorText={
-                errors?.email?.type === 'required'
-                  ? 'This field is required!'
-                  : 'Wrong email format!'
-              }
+              errorText={emailErrorText(errors)}
             />
           )}
 
