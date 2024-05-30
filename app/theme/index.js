@@ -21,9 +21,6 @@ const theme = createTheme({
     error: {
       main: '#d32f2f'
     }
-  },
-  button: {
-    fontFamily: urbanist.style.fontFamily
   }
 })
 
