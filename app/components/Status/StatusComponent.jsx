@@ -29,7 +29,7 @@ export default function StatusComponent() {
           textAlign: 'center'
         }}
       >
-        Thank You!
+        Thank You !
       </Typography>
       <Typography
         sx={{
@@ -44,13 +44,18 @@ export default function StatusComponent() {
       <Button
         variant="contained"
         color="primary"
+        minHeight={40}
         onClick={() => router.push('contact')}
         sx={{
           fontWeight: 700,
-          fontSize: '16px'
+          fontSize: '16px',
+          boxShadow: 'none',
+          borderRadius: '8px',
+          color: 'white',
+          textTransform: 'none'
         }}
       >
-        <span className="text-white normal-case mr-1">Go back</span>
+        Go back
       </Button>
     </div>
   )
