@@ -19,7 +19,6 @@ export default function FormInput(props) {
     component: Component,
     defaultCountry = 'VN',
     multiline = false,
-    InputLabelProps = { shrink: false },
     rows = 1
   } = props
 
@@ -47,7 +46,6 @@ export default function FormInput(props) {
             defaultCountry={defaultCountry}
             placeholder={placeholder}
             multiline={multiline}
-            InputLabelProps={InputLabelProps}
             rows={rows}
           />
         )}
@@ -69,5 +67,8 @@ FormInput.propTypes = {
   placeholder: PropTypes.string,
   errors: PropTypes.object,
   errorText: PropTypes.string,
-  component: PropTypes.elementType.isRequired
+  component: PropTypes.elementType.isRequired,
+  defaultCountry: PropTypes.string,
+  multiline: PropTypes.bool,
+  rows: PropTypes.number
 }
